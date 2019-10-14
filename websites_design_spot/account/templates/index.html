@@ -3,9 +3,10 @@
         <title>websites designs spot</title>
     </head>
     <body>
+        <h1>Home</h1>
         <nav>
             <ul>
-                <li><a href="#">Login</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 <li><a href="#">Register</a></li>
                 <li><a href="#">Profile</a></li>
@@ -15,6 +16,6 @@
         <div>
             {% for message in messages %} {{ message }} {% endfor %}
         </div>
-        {% endif %}
+        {% endif %} 
     </body>
 </html>
