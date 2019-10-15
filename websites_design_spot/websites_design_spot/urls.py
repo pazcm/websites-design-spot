@@ -13,14 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from account.views import index, logout, login, register
+from webdes import urls as urls_webdes
+from webdes.views import all_webdes
+from django.views import static
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index, name="index"),    
+    # url(r'^$', index, name="index"),    
     url(r'^account/logout/$', logout, name="logout"),
     url(r'^account/login/$', login, name="login"),
     url(r'^account/register/$', register, name='register'),
+    url(r'^$', all_webdes, name='index'),
+    url(r'^webdes/', include(urls_webdes)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
