@@ -1,12 +1,12 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block content %}
-<form method="post" action="{% url 'register' %}" class="accountform">
-  <fieldset class="form-group">
-    <legend>Create Account</legend>
-    <p>Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
-    {% csrf_token %}
-    {{ user_form }}
-    <button type="submit" class="btn btn-primary">Create account</button>
-  </fieldset>
-</form>
+    <form method="post" action="{% url 'register' %}" class="accountform">
+        <fieldset class="form-group">
+            <legend>Create a new account</legend>
+            <p>Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
+            {% csrf_token %}
+            {{  user_form }}
+            <button type="submit" class="btn btn-primary">Create account</button>
+        </fieldset>
+    </form>
 {% endblock %}
