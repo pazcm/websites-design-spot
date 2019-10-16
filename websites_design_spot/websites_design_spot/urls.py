@@ -21,11 +21,13 @@ from webdes import urls as urls_webdes
 from webdes.views import all_webdes
 from django.views import static
 from .settings import MEDIA_ROOT
+from cart import urls as urls_cart
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_webdes, name='index'),
     url(r'^account/', include(urls_account)),
     url(r'^webdes/', include(urls_webdes)),
+    url(r'^cart/', include(urls_cart)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
