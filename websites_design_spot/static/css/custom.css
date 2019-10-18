@@ -1,9 +1,10 @@
 body {
   font-family: Arial;
   margin: 0;
-  background-color: yellow;
+  background-color: #fff;
 }
 
 footer {
   padding: 50px;
+  background-color: #ffffe6;
 }
