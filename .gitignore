@@ -1,2 +1,4 @@
 *.sqlite3
 vE0/
+env.py
+__pycache__
