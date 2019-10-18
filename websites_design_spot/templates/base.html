@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +10,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <!-- Bootstrap JS, Popper.js, and jQuery -->
@@ -50,8 +52,8 @@
           <li>
             <a href="{% url 'view_cart' %}">
               <i class="fa fa-shipping-cart"></i>Cart
-              {% if product_count > 0 %}
-              <label class="badge badge-warning">{{ product_count }}</label>
+              {% if webdes_count > 0 %}
+              <label class="badge badge-warning">{{ webdes_count }}</label>
               {% endif %}
             </a>
           </li>
