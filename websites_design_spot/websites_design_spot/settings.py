@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django_forms_bootstrap',
+    'bootstrap4',
     'django.contrib.staticfiles',
     'account',
     'webdes',
