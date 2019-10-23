@@ -6,3 +6,4 @@ Under construction ....
 ### Relational database
 ### Stripe payments
 
+[![Build Status](https://travis-ci.com/pazcm/websites-design-spot.svg?branch=master)](https://travis-ci.com/pazcm/websites-design-spot)
