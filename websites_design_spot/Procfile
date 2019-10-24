@@ -1,1 +1,1 @@
-web: gunicorn websites-design-spot.wsgi:application
+web: gunicorn websites-design-spot.wsgi:application 
