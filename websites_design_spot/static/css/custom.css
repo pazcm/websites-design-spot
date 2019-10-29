@@ -4,7 +4,16 @@ body {
   background-color: #fff;
 }
 
-.log-link {
+.form-control {
+  width: 70%;
+  margin-right: 15px;
+}
+
+.log-container .navbar-nav {
+  flex-direction: row;
+}
+
+.log-container li {
   padding-right: 15px;
 }
 

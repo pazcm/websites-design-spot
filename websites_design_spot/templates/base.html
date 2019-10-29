@@ -19,46 +19,51 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav m-auto">
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li> -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Websites <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Category 1</a>
-          <a class="dropdown-item" href="#">Category 2</a>
-          <a class="dropdown-item" href="#">Category 3</a>
-          <a class="dropdown-item" href="#">Category 4</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">All Categories</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1">Get In Touch</a>
-      </li>
-    </ul>
     <div class="logo-container m-auto">
       <a class="navbar-brand" href="/">
         <img src="/media/images/kisspng-shape-oval.jpg" width="30" height="30" alt="logo-websites-design-spot">
-      </a>  
+      </a>
     </div>
-    <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0 m-auto">
-      <input type="text" name="q" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="search">Search</button>
-    </form>
-    <div class="log-container m-auto">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li> -->
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'webdes' %}">Websites <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Category 1</a>
+            <a class="dropdown-item" href="#">Category 2</a>
+            <a class="dropdown-item" href="#">Category 3</a>
+            <a class="dropdown-item" href="#">Category 4</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">All Categories</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" tabindex="-1">Get In Touch</a>
+        </li>
+      </ul>
+
+      <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0 m-auto">
+        <input type="text" name="q" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="search">Search</button>
+      </form>
+
+      <div class="log-container m-auto">
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
           <li><a href="{% url 'profile' %}" class="nav-link">Profile</a></li>
@@ -77,19 +82,19 @@
           </li>
         </ul>
       </div>
-  </div>
-</nav>
+    </div>
+  </nav>
   <!-- End Navigation -->
   {% if messages %}
-    <div class="alert alert-success">
-      <div class="messages">
-        {% for message in messages %}
-        {{ message }}
-        {% endfor %}
-      </div>
+  <div class="alert alert-success">
+    <div class="messages">
+      {% for message in messages %}
+      {{ message }}
+      {% endfor %}
     </div>
+  </div>
   {% endif %}
-    {% block content %} {% endblock %}
+  {% block content %} {% endblock %}
   <footer>
     <div class="footer-container">
       <p>&copy; 2019 Marta Paz</p>
