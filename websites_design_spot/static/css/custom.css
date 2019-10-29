@@ -4,6 +4,10 @@ body {
   background-color: #fff;
 }
 
+.log-link {
+  padding-right: 15px;
+}
+
 footer {
   padding: 50px;
   background-color: #ffffe6;

@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block page_title %}{% endblock %}</title>
   <!-- Bootstrap CSS -->
@@ -18,30 +18,58 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Websites Design Spot</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav m-auto">
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li> -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Websites <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Category 1</a>
+          <a class="dropdown-item" href="#">Category 2</a>
+          <a class="dropdown-item" href="#">Category 3</a>
+          <a class="dropdown-item" href="#">Category 4</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">All Categories</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" tabindex="-1">Get In Touch</a>
+      </li>
+    </ul>
+    <div class="logo-container m-auto">
+      <a class="navbar-brand" href="/">
+        <img src="/media/images/kisspng-shape-oval.jpg" width="30" height="30" alt="logo-websites-design-spot">
+      </a>  
+    </div>
+    <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0 m-auto">
+      <input type="text" name="q" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="search">Search</button>
+    </form>
+    <div class="log-container m-auto">
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
-          <li><a href="{% url 'profile' %}">Profile</a></li>
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          <li><a href="{% url 'profile' %}" class="nav-link">Profile</a></li>
+          <li><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
           {%  else %}
-          <li><a href="{% url 'register' %}">Register</a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
+          <li><a href="{% url 'register' %}" class="nav-link">Sign Up</a></li>
+          <li><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
           {% endif %}
           <li>
-            <a href="{% url 'view_cart' %}">
-              <i class="fa fa-shipping-cart"></i>Cart
+            <a href="{% url 'view_cart' %}" class="nav-link">
+              <i class="fas fa-shopping-cart"></i>
               {% if webdes_count > 0 %}
               <label class="badge badge-warning">{{ webdes_count }}</label>
               {% endif %}
@@ -49,29 +77,21 @@
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
   <!-- End Navigation -->
   {% if messages %}
-  <div class="alert alert-success">
-    <div class="messages">
-      {% for message in messages %}
-      {{ message }}
-      {% endfor %}
+    <div class="alert alert-success">
+      <div class="messages">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+      </div>
     </div>
-  </div>
   {% endif %}
-  <div class="container">
-    <div class="display">
-      <form action="{% url 'search' %}" method="get">
-        <input type="text" name="q">
-        <button type="search">Search</button>
-      </form>
-    </div>
     {% block content %} {% endblock %}
-  </div>
   <footer>
-    <div class="container">
+    <div class="footer-container">
       <p>&copy; 2019 Marta Paz</p>
     </div>
   </footer>

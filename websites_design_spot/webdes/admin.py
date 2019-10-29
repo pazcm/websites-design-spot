@@ -1,5 +1,5 @@
 from django.contrib import admin
 from .models import Webdes
 
-# Register your models here.
+# Add websites through admin panel
 admin.site.register(Webdes)
