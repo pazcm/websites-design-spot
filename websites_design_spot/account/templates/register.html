@@ -1,13 +1,61 @@
+<!-- TBD: Add validation of registration -->
+
 {% extends "base.html" %} 
 {% load bootstrap4 %}
 {% block content %}
-    <form method="post" action="{% url 'register' %}" class="accountform">
-        <fieldset class="form-group">
-            <legend>Create a new account</legend>
-            <p>Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
-            {% csrf_token %}
-            {{ user_form }}
-            <button type="submit" class="btn btn-primary">Create account</button>
-        </fieldset>
-    </form>
+<form  method="post" action="{% url 'register' %}" class="registration-form form-horizontal text-center">
+  <fieldset class="form-group">
+    <div id="legend">
+        <legend>Create Account</legend>
+    </div>
+    <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+    {% csrf_token %}
+    <!-- First Name -->
+    <div class="form-group">
+      <label class="form-label"  for="firstname">First Name</label>
+      <div class="input">
+        <input type="text" id="firstname" name="firstname" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+     <!-- Last Name -->
+    <div class="form-group">
+      <label class="form-label"  for="lastname">Last Name</label>
+      <div class="input">
+        <input type="text" id="lastname" name="lastname" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+     <!-- E-mail -->
+    <div class="form-group">
+      <label class="form-label" for="email">E-mail</label>
+      <div class="input">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+    <!-- Password-->
+    <div class="form-group">
+      <label class="form-label" for="password">Password</label>
+      <div class="input">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <p class="help-block">Password should be at least 5 characters</p>
+      </div>
+    </div>
+    <!-- Password Confirmation-->
+    <div class="form-group">
+      <label class="form-label"  for="password_confirm">Confirm Password</label>
+      <div class="input">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+    <!-- Terms & Conditions -->
+    <div class="form-group">
+        <label><input type="checkbox" name="condition" id="condition"> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
+    </div>
+    <!-- Button -->
+    <div class="form-group">
+      <div class="input">
+        <button class="btn btn-success">Create Account</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
 {% endblock %}
