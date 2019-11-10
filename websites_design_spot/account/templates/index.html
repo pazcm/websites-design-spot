@@ -1,5 +1,29 @@
-{% extends 'base.html' %}
-{% block content %}
-<h3>Welcome to Websites Design Spot.</h3>
-<p>I'm building the first functionality for the app that will allow users to register, login and logout.</p>
+{% extends 'base.html' %} {% block content %}
+<!-- home header -->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Websites Design Spot</h1>
+    <p class="lead font-weight-normal">
+      Wellcome to our spot. Go around and have a look at the
+      designs. Create an account and get in touch with us!
+    </p>
+    <a class="btn btn-outline-secondary" href="#">Get started</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+<!-- end home header -->
+<!-- home gallery -->
+<div class="webdes-container">
+  <div class="row row-flex row-webdes">
+    {% for webdes in webdes %}
+    <div class="col-sm-12 col-md-6 col-lg">
+      <div class="webdes panel-body">
+        <a href="{% url 'register' %}"><div class="webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- end home gallery -->
 {% endblock %}

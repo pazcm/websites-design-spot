@@ -21,12 +21,14 @@ from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from webdes.views import all_webdes
+from webdes.views import webdes_home
 from django.views import static
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', all_webdes, name='index'),
+    # url(r'^$', all_webdes, name='index'),
+    url(r'^$', webdes_home, name='index'),
     url(r'^account/', include(urls_account)),
     url(r'^webdes/', include(urls_webdes)),
     url(r'^cart/', include(urls_cart)),
