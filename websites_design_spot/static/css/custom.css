@@ -1,8 +1,56 @@
+/* @import url(https://fonts.googleapis.com/css?family=Archivo+Black); */
+@import url('https://fonts.googleapis.com/css?family=Chathura:400,700,800|Wire+One&display=swap');
+
 body {
-  font-family: Arial;
+  font-family: Chathura;
+  font-size: 2.5rem;
   margin: 0;
   background-color: #fff;
 }
+
+/* --- webdes page --- */
+.webdes-container {
+  padding: 20px;
+}
+
+.row-webdes {
+  justify-content: center;
+}
+
+.col-lg {
+  flex-grow: 0;
+}
+.webdes-image {
+  width: 100%; 
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+
+  max-width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    overflow: hidden;
+
+    border: 1px solid red;
+}
+
+.frame {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 250px;
+  border: 8px solid #fff;
+  border-top-color: #fff;
+  border-radius: 0px;
+  background-color: #f1f1f1;
+  padding:18px;
+  box-shadow: 0 0 2px 2px rgba(0,0,0,.15);
+}
+
+
+/* --- end webdes page --- */
 
 .form-control {
   margin-right: 15px;

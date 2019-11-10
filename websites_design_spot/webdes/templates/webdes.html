@@ -1,27 +1,29 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<div class="webdes-container">
-    <div class="row row-flex">
-        {% for webdes in webdes %}
-            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-                <div class="panel-body">
-                    <div class="webdes" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
-                    <h3>{{ webdes.name }}</h3>
-                    <p class="webdes-description">{{ webdes.description }}</p>
-                    <p>{{ webdes.price }}</p>
-                    <form method="post" action="{% url 'add_to_cart' webdes.id %}">
-                        {% csrf_token %}
-                        <div class="input-group">
-                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                            <span class="input-group-btn">
-                                <button class="btn btn-success" type="submit">Add</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+{% extends 'base.html' %} {% block content %}
+<!-- home header -->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Websites Design Spot</h1>
+    <p class="lead font-weight-normal">
+      Wellcome to our spot. Go around and have a look at the
+      designs. Create an account and get in touch with us!
+    </p>
+    <a class="btn btn-outline-secondary" href="#">Get started</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
+<!-- end home header -->
+<!-- home gallery -->
+<div class="webdes-container">
+  <div class="row row-flex row-webdes">
+    {% for webdes in webdes %}
+    <div class="col-sm-12 col-md-6 col-lg">
+      <div class="webdes panel-body">
+        <div class="webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- end home gallery -->
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- home gallery -->
+<div class="webdes-container">
+  <div class="row row-flex row-webdes">
+    {% for webdes in webdes %}
+    <div class="col-sm-12 col-md-6 col-6-lg">
+      <div class="webdes panel-body">
+        <div class="webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
+         <h3>{{ webdes.name }}</h3>
+            <p class="webdes-description">{{ webdes.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- end home gallery -->
+{% endblock %}
