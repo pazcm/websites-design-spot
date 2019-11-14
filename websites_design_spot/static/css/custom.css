@@ -1,4 +1,3 @@
-/* @import url(https://fonts.googleapis.com/css?family=Archivo+Black); */
 @import url('https://fonts.googleapis.com/css?family=Chathura:400,700,800|Wire+One&display=swap');
 
 body {
@@ -9,6 +8,7 @@ body {
 }
 
 /* --- webdes page --- */
+
 .webdes-container {
   padding: 20px;
 }
@@ -20,17 +20,15 @@ body {
 .col-lg {
   flex-grow: 0;
 }
+
 .webdes-image {
   width: 100%; 
   /* background-repeat: no-repeat; */
   background-size: cover;
-
   max-width: 100%;
-    height: 0;
-    padding-bottom: 50%;
-    overflow: hidden;
-
-    border: 1px solid red;
+  height: 0;
+  padding-bottom: 50%;
+  overflow: hidden;
 }
 
 .frame {
@@ -49,8 +47,10 @@ body {
   box-shadow: 0 0 2px 2px rgba(0,0,0,.15);
 }
 
-
 /* --- end webdes page --- */
+
+
+/* -- account forms -- */
 
 .form-control {
   margin-right: 15px;
@@ -63,6 +63,33 @@ body {
 .log-container li {
   padding-right: 15px;
 }
+
+.login-container, .profile-container {
+  text-align: center;
+}
+
+.registration-container, .login-container, .profile-container {
+  padding: 15px 15px 100px 15px;
+}
+
+#id_username_or_email, #id_password {
+  width: 25%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin: 0 15px;
+}
+
+
+/* -- Footer -- */
 
 footer {
   padding: 50px;
