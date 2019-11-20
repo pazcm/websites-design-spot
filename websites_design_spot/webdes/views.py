@@ -14,3 +14,18 @@ def webdes_home(request):
 
     webdes = Webdes.objects.all()
     return render(request, "index.html", {"webdes": webdes})
+
+# webdes_category view
+"""Return the webdes view of a specific category chosen by the user"""
+
+def webdes_category(request, category):
+    webdes = Webdes.objects.filter(
+        categories__title__contains=category
+    ).order_by(
+        'webdes_name'
+    )
+    context = {
+        "category": category,
+        "webdes": webdes
+    }
+    return render(request, "webdes_category.html", context)
