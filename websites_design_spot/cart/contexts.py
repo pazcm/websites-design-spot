@@ -5,6 +5,7 @@ from webdes.models import Webdes
 def cart_contents(request):
     """
     Display cart content in every page
+    when user is log in can add webdes to the cart
     """
     cart = request.session.get('cart', {})
 

@@ -1,0 +1,65 @@
+<!-- TBD: success page message sent -->
+
+{% extends "base.html" %} 
+{% load bootstrap4 %}
+{% block content %}
+<div class="contact-container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <header class="card-header">
+          <h4 class="card-title mt-2 text-center">Get in touch with us</h4>
+        </header>
+          <article class="card-body">
+          <form  method="post" action="{% url 'register' %}" class="registration-form form-horizontal">
+          <div class="details-container">
+            <!-- First Name -->
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label" for="firstName">First Name </label>
+                  <input type="text" id ="firstName" name="firstName" class="form-control" placeholder="">
+              </div>
+            </div>
+            <!-- Last Name -->
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label" for="lastName">Last Name</label>
+                  <input type="text" id ="lastName" name="lastName" class="form-control" placeholder="">
+              </div>
+            </div>
+            <!-- website -->
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label" for="lastName">Website</label>
+                  <input type="text" id ="website" name="website" class="form-control" placeholder="">
+              </div>
+            </div>
+            <!-- E-mail -->
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label" for="email">Email</label>
+                  <input type="text" id ="email" name="email" class="form-control" placeholder="">
+              </div>
+            </div>
+            <!-- Company -->
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label" for="password">Company</label>
+                  <input type="text" id ="password" name="company" class="form-control" placeholder="">
+              </div>
+            </div>
+            
+            <!-- Button -->
+            <div class="form-group text-center">
+              <div class="input">
+                <button class="btn btn-success">Send Message</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
