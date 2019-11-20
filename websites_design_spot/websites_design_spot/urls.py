@@ -20,6 +20,10 @@ from webdes import urls as urls_webdes
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
+from getintouch import urls as urls_getintouch
+from getintouch import urls as urls_contact
+from getintouch import urls as urls_success
+# from getintouch.views import success
 from webdes.views import all_webdes
 from webdes.views import webdes_home
 from django.views import static
@@ -34,5 +38,8 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^search/', include(urls_search)),
+    url(r'^getintouch/', include(urls_getintouch)),
+     url(r'^contact/', include(urls_contact)),
+    url(r'^success/', include(urls_success)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
