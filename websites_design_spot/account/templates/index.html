@@ -19,7 +19,7 @@
     {% for webdes in webdes %}
     <div class="col-sm-12 col-md-6 col-lg">
       <div class="webdes panel-body">
-        <a href="{% url 'register' %}"><div class="webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div></a>
+        <a href="{% url 'webdes-detail' webdes.id %}"><div class="webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div></a>
       </div>
     </div>
     {% endfor %}

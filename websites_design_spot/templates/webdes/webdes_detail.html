@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block page_title %}{{ webdes.name }}{% endblock %}
+{% block page_heading %}{{ webdes.name }}{% endblock %}
+{% block content %}
+<div class="webdes-container">
+	<div class="row row-flex">
+		{% for webdes in Webdes %}
+		<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+			<div class="webdes panel-body">
+				<p class="webdes-some-tex">hola que tal hola que tal</p>
+				<h3>{{ webdes.name }}</h3>
+				<p class="webdes-description">{{ webdes.description }}</p>
+        <p>{{ webdes.price }}</p>
+        
+				<form method="post" action="{% url 'add_to_cart' webdes.id %}">
+					{% csrf_token %}
+					<div class="input-group">
+						<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity"/>
+						<span class="input-group-btn">
+							<button class="btn btn-success" type="submit">Add</button>
+						</span>
+					</div>
+				</form>
+
+				<div class="webdes-image" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
