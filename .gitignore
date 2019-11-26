@@ -1,4 +1,8 @@
 *.sqlite3
 vE0/
 env.py
-__pycache__
+__pycache__/
+*.py[cod]
+*.log
+*.pyc
+*.pyo
