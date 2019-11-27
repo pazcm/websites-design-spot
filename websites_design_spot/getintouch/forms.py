@@ -1,6 +1,9 @@
 from django import forms
 
 class GetInTouchForm(forms.Form):
-    from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    contact_name = forms.CharField(required=True, label="First Name")
+    contact_lname= forms.CharField(required=True, label="Last Name")
+    from_email = forms.EmailField(required=True, label="Email")
+    contact_website = forms.CharField(required=True, label="Website")
+    contact_company = forms.CharField(required=True, label="Company")
+    message = forms.CharField(widget=forms.Textarea, required=True, label="Message")

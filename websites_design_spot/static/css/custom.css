@@ -88,6 +88,15 @@ body {
   margin: 0 15px;
 }
 
+/* -- Contact -- */
+
+.contact-details-container {
+  padding: 50px;
+}
+
+.some-text {
+  text-align: center;
+}
 
 /* -- Footer -- */
 

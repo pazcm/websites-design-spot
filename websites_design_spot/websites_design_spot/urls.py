@@ -23,7 +23,6 @@ from checkout import urls as urls_checkout
 from getintouch import urls as urls_getintouch
 from getintouch import urls as urls_contact
 from getintouch import urls as urls_success
-# from getintouch.views import success
 from webdes.views import all_webdes
 from webdes.views import webdes_home
 from django.views import static
