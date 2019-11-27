@@ -1,28 +1,28 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block page_title %}{{ webdes.name }}{% endblock %}
 {% block page_heading %}{{ webdes.name }}{% endblock %}
 {% block content %}
-
 <div class="webdes-detail-container">
-    <div class="row row-flex">
-        <div class="col-sm-12 col-md-6 text-left">
-            <p class="webdes-some-text">Some text here hola que tal hola que tal</p>
-            <h2 class="webdes-detail-title">{{ webdes.name }}</h2>
-            <hr class="">
-                <p class="webdes-detail-description">{{ webdes.description|linebreaks }}</p>
-            <hr class="">
-            <p><strong>${{ webdes.price }}</strong></p>
-            <form method="post" action="{% url 'add_to_cart' webdes.id %}">
-                {% csrf_token %}
-                <div class="input-group webdes-detail-button">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success cart-add" type="submit">Add To Cart</button>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <div class="webdes-detail-image" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
+    <div class="webdes panel-body">
+        <div class="row row-flex">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 display panel panel-default">
+                <h3>{{ webdes.name }}</h3>
+                <p class="webdes-description">{{ webdes.description }}</p>
+                <p>{{ webdes.price }}</p>
+                <form method="post" action="{% url 'add_to_cart' webdes.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control"
+                            placeholder="Quantity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 display panel panel-default">
+                <div class="webdes-image" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
+            </div>
         </div>
     </div>
 </div>
