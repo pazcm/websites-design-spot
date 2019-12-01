@@ -4,8 +4,12 @@ from django.db import models
 
 # It will add 'category' field to the db
 
-class Category(models.Model):
-    title = models.CharField(max_length=40, default='')
+CATEGORY_CHOICES = [
+    ('P', 'Professional'),
+    ('E', 'Event'),
+    ('A', 'Abastract'),
+    ('NP', 'Non-Profit'),
+]
 
 # It will create the database for the 'webdes'
 
@@ -14,7 +18,7 @@ class Webdes(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
-    categories = models.ManyToManyField('Category', related_name='webdes')
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=20, default='Event')
    
     def __str__(self):
         return self.name

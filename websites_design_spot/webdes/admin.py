@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Webdes, Category
+from .models import Webdes
 
 # Add websites through admin panel
 admin.site.register(Webdes)
-admin.site.register(Category)
