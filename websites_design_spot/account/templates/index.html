@@ -2,19 +2,22 @@
 {% block page_title %}Webdes Design Spot{% endblock %}
 {% block content %}
 <!-- home header -->
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">Websites Design Spot</h1>
-    <p class="lead font-weight-normal">
-      Wellcome to our spot. Go around and have a look at the
-      designs. Create an account and get in touch with us!
-    </p>
-    <a class="btn btn-outline-secondary" href="#">Get started</a>
+<div class="position-relative overflow-hidden p-5 text-center header-bg home-header">
+  <div class="col-md-5 p-5 mt-5 mx-auto">
+    <h1 class="display-4 font-weight-normal home-title mt-5">Websites Design Spot</h1>
   </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  <!-- welcome block -->
+  <div class="home-welcome-block text-center col-md-5 p-5 mx-auto mt-5">
+    <p class="lead font-weight-normal mt-5">
+        Wellcome to our spot. Go around and have a look at the designs. Create an account and get in touch with us!
+    </p>  
+    <a class="btn btn-header" href="{% url 'login' %}">Get started</a>
+  </div>
 </div>
 <!-- end home header -->
+
+  <!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
+
 <!-- home gallery -->
 <div class="webdes-container">
   <div class="row row-flex row-webdes">

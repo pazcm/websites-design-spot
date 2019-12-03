@@ -1,14 +1,131 @@
 @import url('https://fonts.googleapis.com/css?family=Chathura:400,700,800|Wire+One&display=swap');
 
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-font: #173460;
+  --color-red: #ea4c88; 
+  --color-green: #53c68c; 
+  --color-blue: #3887b6; 
+  --color-yellow: #f9de63;
+  
+}
+
 body {
-  font-family: Chathura;
-  font-size: 2.5rem;
+  font-family: 'Chathura', 'Roboto', sans-serif;
+  font-size: 2rem;
   margin: 0;
   background-color: #fff;
+  height: 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+/* .home-header {
+  content: "";
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 0 5px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+} */
+
+/* --- Navigation --- */
+.dropdown-toggle::after {
+  vertical-align: 0;
+  margin-left: 0;
+  border-top: .2em solid;
+  border-right: .2em solid transparent;
+  border-bottom: 0;
+  border-left: .2em solid transparent;
+}
+
+.dropdown-menu {
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #173460;
+}
+
+.search-box {
+  display: flex;
+}
+
+.form-control-search, .btn-search {
+  font-size: 2rem;
+  height: calc(1em + .75rem + 2px);
+}
+
+.form-control-search {
+  padding: 0 175px 0 15px;
+}
+
+.btn-search {
+  line-height: 0.5;
+  color: #3887b6;
+  border-color: #3887b6;
+}
+
+.btn-search:hover {
+  color: #fff;
+  background-color: #53c68c;
+  border-color: #3887b6;
+}
+
+.fa-shopping-cart {
+  font-size: 1rem;
+}
+
+/* --- home page --- */
+.home-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 50px;
+  font-size: 7rem;
+  line-height: 0.7;
+	letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 
+              8px 8px #ea4c88,
+              20px 20px #3887b6;
+}
+
+.header-bg {
+  background-color: #f9de63;
+}
+
+.home-welcome-block p {
+  font-size: 1.5rem;
+  padding-top: 50px;
+  line-height: 1.3;
+}
+
+.btn-header {
+  font-size: 2rem;
+  color: #3887b6;
+  border-color: #3887b6;
+}
+
+.btn-header:hover {
+  color: #fff;
+  background-color: #53c68c;
+  border-color: #3887b6;
 }
 
 /* --- webdes page --- */
-
 .webdes-container {
   padding: 20px;
 }
@@ -45,12 +162,10 @@ body {
   padding:18px;
   box-shadow: 0 0 2px 2px rgba(0,0,0,.15);
 }
-
 /* --- end webdes page --- */
 
 
 /* -- account forms -- */
-
 .form-control {
   margin-right: 15px;
 }
@@ -88,7 +203,6 @@ body {
 }
 
 /* -- Contact -- */
-
 .contact-details-container {
   padding: 50px;
 }
@@ -98,7 +212,6 @@ body {
 }
 
 /* -- Checkout form -- */
-
 .checkout-container {
   padding: 10px;
 }
@@ -114,9 +227,6 @@ body {
   padding-bottom: 50%;
   overflow: hidden;
 }
-
-/* .card-checkout {
-} */
 
 .checkout-details {
   display: flex;
@@ -208,22 +318,75 @@ label {
   margin-right: 10px;
 }
 
-
+/* testing */
 .highlight {
     background-color: #fff2ac;
     background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
 }
 
 /* -- Footer -- */
-
 footer {
   padding: 50px;
-  background-color: #ffffe6;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  font-size: 1.5rem;
 }
 
+.foot-link:hover {
+  color: var(--color-red);
+}
 
-/* -- Media Queries -- */
+.btn-footer {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
 
+.btn-footer:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.about-footer, .foot-link, .copyright a {
+  color: var(--color-font);
+}
+
+/* -- Social links -- */
+.social-links-footer {
+  padding-top: 15px;
+}
+
+svg {
+  display: inline-block;
+  height: 5vw; 
+  max-height: 50px;
+  width: auto;
+  stroke: var(--color-font);
+  stroke-width: 10;
+  fill: none; 
+}
+
+#in {stroke-dasharray:  300 , 0, 3000;}
+#tw {stroke-dasharray:    0 , 0, 2300;}
+#fb {stroke-dasharray:    0 , 0, 2900;}
+#tblr {stroke-dasharray:  300 , 0, 3000;}
+#gh {stroke-dasharray: 3200 , 0, 3000;}
+
+
+svg:hover #in { animation: in .7s; }
+svg:hover #tw { animation: tw .7s; }
+svg:hover #fb { animation: fb .7s; }
+svg:hover #tblr { animation: tblr .7s; }
+svg:hover #gh { animation: gh .7s; }
+
+
+@keyframes in { 10% {stroke-dasharray:  300, 500, 3000} 100% { stroke-dasharray: 3300, 500, 3000;} }
+@keyframes tw { 10% {stroke-dasharray:    0, 500, 2300} 100% { stroke-dasharray: 2300, 500, 2300;} }
+@keyframes fb { 10% {stroke-dasharray:    0, 500, 2900} 100% { stroke-dasharray: 2900, 500, 2900;} }
+@keyframes px { 10% {stroke-dasharray: 3200, 500, 3000} 100% { stroke-dasharray:6200, 500, 3000;} }
+
+
+
+/*** -- Media Queries -- ***/
 @media only screen and (min-width: 401px) {
 /* Checkout form */
   .card-checkout {
@@ -245,8 +408,16 @@ footer {
   }
 }
 
-
 @media only screen and (min-width: 961px) {
+  .home-title {
+    font-size: 9rem;
+    /* width: 720px; */
+  }
+
+  .home-welcome-block p {
+    font-size: 2.5rem;
+  }
+
   .btn-payment {
     width: 40%;
   }
