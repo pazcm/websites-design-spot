@@ -17,11 +17,11 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg">
 
     <div class="logo-container m-auto">
       <a class="navbar-brand" href="/">
-        WD<img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot">
+        <img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot">
       </a>
     </div>
 
@@ -72,10 +72,6 @@
           {% if user.is_authenticated %}
           <li><a href="{% url 'profile' %}" class="nav-link">Profile</a></li>
           <li><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
-          {%  else %}
-          <li><a href="{% url 'register' %}" class="nav-link">Sign Up</a></li>
-          <li><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
-          {% endif %}
           <li>
             <a href="{% url 'view_cart' %}" class="nav-link">
               <i class="fas fa-shopping-cart"></i>
@@ -84,6 +80,10 @@
               {% endif %}
             </a>
           </li>
+          {%  else %}
+          <li><a href="{% url 'register' %}" class="nav-link">Sign Up</a></li>
+          <li><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -107,12 +107,13 @@
     <div class="row text-center text-md-left mt-3 pb-3">
 
       <!-- Grid column1 -->
-      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+      <!-- <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3"> -->
+        <div class="col-12 col-md-4">
         <!-- About the company -->
         <h4 class="logo-footer mb-2">
           <a class="logo-company" href="/"><img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot"></a>
         </h4>
-        <p class="about-footer">Some text here about the company ... Lorem ipsum dolor sit amet, consectetur adipisicing elit 
+        <p class="about-footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         <!-- Social links -->
         <div class="social-links-footer">
@@ -146,7 +147,8 @@
       </div>
 
       <!-- Grid column2 -->
-      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+      <!-- <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3"> -->
+        <div class="col-6 col-md-4">
         <h4 class="text-uppercase mb-2 font-weight-bold">Development</h4>
         <p>
           <a class="foot-link" href="#">Web design</a>
@@ -159,7 +161,8 @@
         </p>
       </div>
       <!-- Grid column3 -->
-      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+      <!-- <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3"> -->
+        <div class="col-6 col-md-4">
         <h4 class="text-uppercase mb-2 font-weight-bold">Contact</h4>
         <p>
           <a class="foot-link" href="#">Limerick, LoremIpsum St. 5, IE 010101, Eire</a>
