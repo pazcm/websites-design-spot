@@ -30,15 +30,11 @@ body::before {
   z-index: 100;
 }
 
-/* .home-header {
-  content: "";
-  left: 0;
-  width: 100%;
-  box-shadow: 0px 0 5px rgba(0, 0, 0, 0.8);
-  z-index: 100;
-} */
-
 /* --- Navigation --- */
+.navbar {
+  background-color: var(--color-yellow);
+}
+
 .dropdown-toggle::after {
   vertical-align: 0;
   margin-left: 0;
@@ -50,10 +46,23 @@ body::before {
 
 .dropdown-menu {
   font-size: 2rem;
+  background-color: #000;
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+.dropdown-item:hover {
+  background-color: #fff;
 }
 
 .nav-link {
-  color: #173460;
+  color: #000;
+}
+
+.nav-link:hover {
+  color: #fff;
 }
 
 .search-box {
@@ -67,18 +76,21 @@ body::before {
 
 .form-control-search {
   padding: 0 175px 0 15px;
+  border: 1px solid #000;
+  color: #000;
 }
 
 .btn-search {
   line-height: 0.5;
-  color: #3887b6;
-  border-color: #3887b6;
+  color: #000;
+  border-color: #000;
+  background-color: #fff;
 }
 
 .btn-search:hover {
   color: #fff;
-  background-color: #53c68c;
-  border-color: #3887b6;
+  background-color: #000;
+  border-color: #fff;
 }
 
 .fa-shopping-cart {
@@ -86,25 +98,21 @@ body::before {
 }
 
 /* --- home page --- */
-.home-title {
+.home-title, .header-title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding-top: 50px;
-  font-size: 7rem;
+  font-size: 5rem;
   line-height: 0.7;
 	letter-spacing: 0.1em;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
   text-shadow: 
               8px 8px #ea4c88,
               20px 20px #3887b6;
-}
-
-.header-bg {
-  background-color: #f9de63;
 }
 
 .home-welcome-block p {
@@ -113,18 +121,53 @@ body::before {
   line-height: 1.3;
 }
 
-.btn-header {
+.btn-home {
   font-size: 2rem;
   color: #3887b6;
   border-color: #3887b6;
 }
 
-.btn-header:hover {
+.btn-home:hover {
   color: #fff;
   background-color: #53c68c;
   border-color: #3887b6;
 }
 
+/* --- header --- */
+.header-bg {
+  background-color: #f9de63;
+}
+
+.header-title {
+  padding: 0;
+}
+
+.card-header {
+  background-color: var(--color-yellow);
+  border: 0;
+}
+
+.header-bg::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  box-shadow: 0px 0 15px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.card-title {
+  color: #000;
+}
+
+/* --- logo --- */
+.logo-container {
+  padding-bottom: 5px;
+  padding-left: 75px;
+}
+  
 /* --- webdes page --- */
 .webdes-container {
   padding: 20px;
@@ -164,6 +207,12 @@ body::before {
 }
 /* --- end webdes page --- */
 
+/* --- forms --- */
+.form-control {
+  background-color: #fff !important;
+  border: 1px solid #000;
+  color: #000;
+}
 
 /* -- account forms -- */
 .form-control {
@@ -211,6 +260,16 @@ body::before {
   text-align: center;
 }
 
+.btnContact {
+  border: 1px solid #000;
+  color: #000;
+}
+
+.btnContact:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 /* -- Checkout form -- */
 .checkout-container {
   padding: 10px;
@@ -251,7 +310,7 @@ input, select {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid #000;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
@@ -409,16 +468,24 @@ svg:hover #gh { animation: gh .7s; }
 }
 
 @media only screen and (min-width: 961px) {
-  .home-title {
+  .home-title, .header-title {
     font-size: 9rem;
-    /* width: 720px; */
+  }
+
+  .header-title {
+    font-size: 7rem;
   }
 
   .home-welcome-block p {
     font-size: 2.5rem;
-  }
+  }ct
 
   .btn-payment {
     width: 40%;
   }
+
+  .logo-container {
+    padding-left: 25px;
+}
+  
 }
