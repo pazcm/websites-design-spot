@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Chathura:400,700,800|Wire+One&display=swap');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 :root {
   --color-white: #fff;
@@ -67,17 +68,6 @@ body::before {
 
 .search-box {
   display: flex;
-}
-
-.form-control-search, .btn-search {
-  font-size: 2rem;
-  height: calc(1em + .75rem + 2px);
-}
-
-.form-control-search {
-  padding: 0 175px 0 15px;
-  border: 1px solid #000;
-  color: #000;
 }
 
 .btn-search {
@@ -212,12 +202,30 @@ body::before {
   background-color: #fff !important;
   border: 1px solid #000;
   color: #000;
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.form-control-search, .btn-search {
+  font-size: 2rem;
+  height: calc(1em + .75rem + 2px);
+}
+
+.form-control-search {
+  padding: 0 175px 0 15px;
+  border: 1px solid #000;
+  color: #000;
+}
+
+form a {
+  color: var(--color-red);
+}
+
+form a:hover {
+  color: var(--color-blue);
 }
 
 /* -- account forms -- */
-.form-control {
-  margin-right: 15px;
-}
 
 .log-container .navbar-nav {
   flex-direction: row;
@@ -249,6 +257,16 @@ body::before {
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   margin: 0 15px;
+}
+
+.registration-terms {
+  font-size: 1rem;
+}
+
+input[type=checkbox] {
+  height: auto;
+  display: unset;
+  width: unset;
 }
 
 /* -- Contact -- */
@@ -390,16 +408,29 @@ label {
 
 /* -- Footer -- */
 footer {
-  padding: 50px;
-  background-color: #fff;
-  border-top: 1px solid #e5e5e5;
-  /* border-top: 1px solid #000;  */
-  /* background-color: var(--color-yellow); */
+  border-top: 2px solid #e5e5e5;
+  background-color: white;
+  z-index: 2;
+  position: relative;
   font-size: 1.5rem;
+  color: #999;
+  padding: 50px;
+}
+
+.footer-link {
+  margin: 0;
+}
+
+.title-footer-link {
+  color: #444;
+}
+
+.foot-link {
+  color: #999;
 }
 
 .foot-link:hover {
-  color: var(--color-red);
+  color: #444;
 }
 
 .btn-footer {
@@ -413,56 +444,63 @@ footer {
 }
 
 .footer-bottom {
-   border-top: 1px solid #000;
+   border-top: 1px solid #e5e5e5;
 }
-/* .bottom-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  box-shadow: 0px 0 15px rgba(0, 0, 0, 0.8);
-  z-index: 100;
-} */
 
-.about-footer, .foot-link, .copyright a {
-  color: var(--color-font);
+.company-name {
+  color: #999;
 }
+
+.company-name:hover {
+  color: var(--color-green);
+}
+
 
 /* -- Social links -- */
 .social-links-footer {
   padding-top: 15px;
 }
 
-svg {
-  display: inline-block;
-  height: 5vw; 
-  max-height: 50px;
-  width: auto;
-  stroke: var(--color-font);
-  stroke-width: 10;
-  fill: none; 
+a, a:hover {
+	text-decoration: none;
 }
 
-#in {stroke-dasharray:  300 , 0, 3000;}
-#tw {stroke-dasharray:    0 , 0, 2300;}
-#fb {stroke-dasharray:    0 , 0, 2900;}
-#tblr {stroke-dasharray:  300 , 0, 3000;}
-#gh {stroke-dasharray: 3200 , 0, 3000;}
+.socialbtns, .socialbtns a, .socialbtns i {
+  margin: 0;
+  padding: 5px;
+}
 
+.socialbtns .fab {
+	width: auto;
+  height: auto;
+	color: #999;
+	background-color: #FFF;
+}
 
-svg:hover #in { animation: in .7s; }
-svg:hover #tw { animation: tw .7s; }
-svg:hover #fb { animation: fb .7s; }
-svg:hover #tblr { animation: tblr .7s; }
-svg:hover #gh { animation: gh .7s; }
+.socialbtns .fa-twitter:hover {
+	color: #5bf;
+	background-color: #fff;
+}
 
+.socialbtns .fa-tumblr:hover {
+	color: #357;
+	background-color: #fff;
+}
 
-@keyframes in { 10% {stroke-dasharray:  300, 500, 3000} 100% { stroke-dasharray: 3300, 500, 3000;} }
-@keyframes tw { 10% {stroke-dasharray:    0, 500, 2300} 100% { stroke-dasharray: 2300, 500, 2300;} }
-@keyframes fb { 10% {stroke-dasharray:    0, 500, 2900} 100% { stroke-dasharray: 2900, 500, 2900;} }
-@keyframes px { 10% {stroke-dasharray: 3200, 500, 3000} 100% { stroke-dasharray:6200, 500, 3000;} }
+.socialbtns .fa-facebook-square:hover {
+	color: #45a;
+	background-color: #fff;
+}
 
+.socialbtns .fa-github:hover {
+	color: #211;
+	background-color: #fff;
+}
+
+.socialbtns .fa-linkedin-in:hover {
+	color: #08b;
+	background-color: #fff;
+}
 
 
 /*** -- Media Queries -- ***/
@@ -485,6 +523,14 @@ svg:hover #gh { animation: gh .7s; }
     justify-content: space-between;
     padding: 20px 0;
   }
+  /* footer */
+  .footer-links-services {
+    padding-left: 75px;
+  }
+
+  .socialbtns {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (min-width: 961px) {
@@ -506,6 +552,11 @@ svg:hover #gh { animation: gh .7s; }
 
   .logo-container {
     padding-left: 25px;
-}
+  }
+
+  /* footer */
+  .footer-links-services {
+    padding-left: 200px;
+  }
   
 }
