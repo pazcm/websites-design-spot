@@ -4,19 +4,21 @@
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-font: #173460;
-  --color-red: #ea4c88; 
-  --color-green: #53c68c; 
-  --color-blue: #3887b6; 
+  --color-white-bsw: #f1f1f1;
+  --color-light-grey: #ebebeb;
+  --color-light-medium-gray: #999;
+  --color-dark-medium-gray: #444;
   --color-yellow: #f9de63;
-  
+  --color-green: #53c68c;
+  --color-red: #ea4c88;
+  --color-blue: #3887b6;  
 }
 
 body {
   font-family: 'Chathura', 'Roboto', sans-serif;
   font-size: 2rem;
   margin: 0;
-  background-color: #ebebeb;
+  background-color: var(--color-light-grey);
   height: 100%;
 }
 
@@ -47,23 +49,23 @@ body::before {
 
 .dropdown-menu {
   font-size: 2rem;
-  background-color: #000;
+  background-color: var(--color-black);
 }
 
 .dropdown-item {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .dropdown-item:hover {
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .nav-link {
-  color: #000;
+  color: var(--color-black);
 }
 
 .nav-link:hover {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .search-box {
@@ -72,15 +74,15 @@ body::before {
 
 .btn-search {
   line-height: 0.5;
-  color: #000;
-  border-color: #000;
-  background-color: #fff;
+  color: var(--color-black);
+  border-color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 .btn-search:hover {
-  color: #fff;
-  background-color: #000;
-  border-color: #fff;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-color: var(--color-white);
 }
 
 .fa-shopping-cart {
@@ -99,10 +101,10 @@ body::before {
 	letter-spacing: 0.1em;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: var(--color-white);
   text-shadow: 
-              8px 8px #ea4c88,
-              20px 20px #3887b6;
+              8px 8px var(--color-red),
+              20px 20px var(--color-blue);
 }
 
 .home-welcome-block p {
@@ -113,19 +115,19 @@ body::before {
 
 .btn-home {
   font-size: 2rem;
-  color: #3887b6;
-  border-color: #3887b6;
+  color: var(--color-blue);
+  border-color: #var(--color-blue);
 }
 
 .btn-home:hover {
-  color: #fff;
-  background-color: #53c68c;
-  border-color: #3887b6;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border-color: var(--color-blue);
 }
 
 /* --- header --- */
 .header-bg {
-  background-color: #f9de63;
+  background-color: var(--color-yellow);
 }
 
 .header-title {
@@ -149,7 +151,7 @@ body::before {
 }
 
 .card-title {
-  color: #000;
+  color: var(--color-black);
 }
 
 /* --- logo --- */
@@ -188,20 +190,20 @@ body::before {
   z-index: 1;
   width: 300px;
   height: 250px;
-  border: 8px solid #fff;
-  border-top-color: #fff;
+  border: 8px solid var(--color-white);
+  border-top-color: var(--color-white);
   border-radius: 0px;
-  background-color: #f1f1f1;
-  padding:18px;
+  background-color: var(--color-white-bsw);
+  padding: 18px;
   box-shadow: 0 0 2px 2px rgba(0,0,0,.15);
 }
 /* --- end webdes page --- */
 
 /* --- forms --- */
 .form-control {
-  background-color: #fff !important;
-  border: 1px solid #000;
-  color: #000;
+  background-color: var(--color-white) !important;
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
   font-size: 1.5rem;
   margin-right: 15px;
 }
@@ -213,8 +215,8 @@ body::before {
 
 .form-control-search {
   padding: 0 175px 0 15px;
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
 }
 
 form a {
@@ -250,12 +252,11 @@ form a:hover {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
+  background-color: var(--color-white);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   margin: 0 15px;
 }
 
@@ -280,13 +281,13 @@ input[type=checkbox] {
 
 .btnContact {
   background-color: var(--color-green);
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
 }
 
 .btnContact:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .form-control-contact {
@@ -330,10 +331,9 @@ input, select {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
+  background-color: var(--color-white);
   background-clip: padding-box;
-  border: 1px solid #000;
+  border: 1px solid var(--color-black);
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
@@ -408,12 +408,12 @@ label {
 
 /* -- Footer -- */
 footer {
-  border-top: 2px solid #e5e5e5;
-  background-color: white;
+  border-top: 2px solid var(--color-ligh-grey);
+  background-color: var(--color-white);
   z-index: 2;
   position: relative;
   font-size: 1.5rem;
-  color: #999;
+  color: var(--color-light-medium-gray);
   padding: 50px;
 }
 
@@ -422,15 +422,15 @@ footer {
 }
 
 .title-footer-link {
-  color: #444;
+  color: var(--color-dark-medium-gray);
 }
 
 .foot-link {
-  color: #999;
+  color: var(--color-light-medium-gray);
 }
 
 .foot-link:hover {
-  color: #444;
+  color: var(--color-dark-medium-gray);
 }
 
 .btn-footer {
@@ -444,11 +444,11 @@ footer {
 }
 
 .footer-bottom {
-   border-top: 1px solid #e5e5e5;
+   border-top: 1px solid var(--color-light-grey);
 }
 
 .company-name {
-  color: #999;
+  color: var(--color-light-medium-gray);
 }
 
 .company-name:hover {
@@ -473,33 +473,28 @@ a, a:hover {
 .socialbtns .fab {
 	width: auto;
   height: auto;
-	color: #999;
-	background-color: #FFF;
+	color: var(--color-light-medium-gray);
+	background-color: var(--color-white);
 }
 
 .socialbtns .fa-twitter:hover {
 	color: #5bf;
-	background-color: #fff;
 }
 
 .socialbtns .fa-tumblr:hover {
 	color: #357;
-	background-color: #fff;
 }
 
 .socialbtns .fa-facebook-square:hover {
 	color: #45a;
-	background-color: #fff;
 }
 
 .socialbtns .fa-github:hover {
 	color: #211;
-	background-color: #fff;
 }
 
 .socialbtns .fa-linkedin-in:hover {
 	color: #08b;
-	background-color: #fff;
 }
 
 
