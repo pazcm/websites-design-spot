@@ -54,6 +54,7 @@ h2 {
 .dropdown-menu {
   font-size: 2rem;
   background-color: var(--color-black);
+  margin-top: 20px;
 }
 
 .dropdown-item {
@@ -70,6 +71,11 @@ h2 {
 
 .nav-link:hover {
   color: var(--color-white);
+}
+
+.navbar-nav .nav-link {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .search-box {
@@ -92,6 +98,40 @@ h2 {
 .fa-shopping-cart {
   font-size: 1rem;
 }
+
+/* -- hamburguer menu -- */
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  border: 1px solid var(--color-white);
+  border-radius: .25rem;
+}
+
+.navbar-toggler:hover {
+  background-color:black;
+}
+
+button:focus {
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-color: var(--color-white);
+  height: 0.1rem;
+  padding: 1px;
+  margin: 5px;
+  display: block;
+}
+
+.nav-item:hover {
+  background-color: black;
+  border-radius: .25rem;
+  border: 1px solid black;
+  /* margin-top: 15px; */
+}
+
 
 /* --- home page --- */
 .home-title, .header-title {
@@ -409,6 +449,10 @@ label {
   margin-right: 10px;
 }
 
+.badge {
+  background-color: var(--color-blue);
+}
+
 /* -- webdes detail page -- */
 .webdes-details {
   display: flex;
@@ -539,6 +583,7 @@ a, a:hover {
 
 /*** -- Media Queries -- ***/
 @media only screen and (min-width: 401px) {
+
 /* Checkout form */
   .card-checkout {
     display: flex;
@@ -557,6 +602,7 @@ a, a:hover {
     justify-content: space-between;
     padding: 20px 0;
   }
+
   /* footer */
   .footer-links-services {
     padding-left: 75px;
@@ -568,6 +614,18 @@ a, a:hover {
 }
 
 @media only screen and (min-width: 961px) {
+  .navbar {  
+    font-size: 1.5rem;
+  }
+
+  .dropdown-menu {
+    margin-top: 20px;
+  }
+
+  .dropdown-item {
+      font-size: 1.5rem;
+  }
+
   .home-title, .header-title {
     font-size: 9rem;
   }
@@ -597,7 +655,7 @@ a, a:hover {
   }
 
   .logo-container {
-    padding-left: 25px;
+    padding-left: 33px;
   }
 
   /* footer */
@@ -609,4 +667,18 @@ a, a:hover {
     font-size: 1.5rem;
   }
   
+}
+
+@media only screen and (min-width: 1025px) {
+  .navbar {
+    font-size: 2rem;
+  }
+
+  .dropdown-menu.show {
+    margin-top: 14px;
+  }
+
+  .dropdown-item {
+      font-size: 2rem;
+  }
 }
