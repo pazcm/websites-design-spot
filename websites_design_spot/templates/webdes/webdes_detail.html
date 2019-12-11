@@ -4,30 +4,32 @@
 {% block content %}
 <div class="webdes-detail-container">
     <div class="webdes panel-body">
-        <div class="row row-flex">
+        <div class="row row-flex flex-column-reverse flex-md-row p-2 p-md-3 p-lg-5 m-0">
             <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 display panel panel-default">
-                <h3>{{ webdes.name }}</h3>
-                <h3 class="webdes-category">Category: {{ webdes.get_category_display }}</h3>
-            {% for category in webdes.categorys.all %}
-              <a href="{% url 'webdes_category' category.name %}">
-                {{ category.name }}
-              </a>
-            {% endfor %}
-                <p class="webdes-description">{{ webdes.description }}</p>
-                <p>{{ webdes.price }}</p>
-                <form method="post" action="{% url 'add_to_cart' webdes.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control"
-                            placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
-                </form>
+                <h2 class="webdes-detail-title pt-2">{{ webdes.name }}</h2>
+                {% for category in webdes.categorys.all %}
+                <a href="{% url 'webdes_category' category.name %}">
+                    {{ category.name }}
+                </a>
+                {% endfor %}
+                <hr>
+                <p class="webdes-description pb-xl-5">{{ webdes.description }}</p>
+                <div class="webdes-details">
+                    <p class="webdes-price mb-0">{{ webdes.price }}&nbsp;&euro; </span class="webdes-category">Category: {{ webdes.get_category_display }}</span></p>
+                    <form class="webdes-detail-qty-form" method="post" action="{% url 'add_to_cart' webdes.id %}">
+                        {% csrf_token %}
+                        <div class="input-group webdes-quantity">
+                            <input name="quantity" type="number" min="1" max="999" class="form-control qty-input"
+                                placeholder="Quantity">
+                            <span class="input-group-btn">
+                                <button class="btn btn-webdes-detail" type="submit">Add</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 display panel panel-default">
-                <div class="webdes-image" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 display panel panel-default pt-2">
+                <div class="webdes-detail-image webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
             </div>
         </div>
     </div>

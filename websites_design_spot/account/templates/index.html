@@ -23,8 +23,8 @@
   <div class="row row-flex row-webdes">
     {% for webdes in webdes %}
     <div class="col-sm-12 col-md-6 col-lg">
-      <div class="webdes panel-body">
-        <a href="{% url 'webdes-detail' webdes.id %}"><div class="webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div></a>
+      <div class="webdes panel-body pt-4">
+        <a href="{% url 'webdes-detail' webdes.id %}"><div class="webdes-image webdes-image-home frame p-3" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div></a>
       </div>
     </div>
     {% endfor %}

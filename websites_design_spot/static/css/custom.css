@@ -33,6 +33,10 @@ body::before {
   z-index: 100;
 }
 
+h2 {
+  font-weight: 900;
+}
+
 /* --- Navigation --- */
 .navbar {
   background-color: var(--color-yellow);
@@ -115,14 +119,18 @@ body::before {
 
 .btn-home {
   font-size: 2rem;
-  color: var(--color-blue);
-  border-color: #var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-white);
 }
 
 .btn-home:hover {
   color: var(--color-white);
-  background-color: var(--color-green);
-  border-color: var(--color-blue);
+  background-color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.webdes-image.webdes-image-home {
+  min-height: 250px;
 }
 
 /* --- header --- */
@@ -177,7 +185,8 @@ body::before {
   width: 100%; 
   background-size: cover;
   max-width: 100%;
-  height: 0;
+  height: 100%;
+  min-height: 250px;
   padding-bottom: 50%;
   overflow: hidden;
 }
@@ -185,10 +194,10 @@ body::before {
 .frame {
   display: inline-block;
   vertical-align: top;
-  margin: 10px;
   position: relative;
   z-index: 1;
-  width: 300px;
+  width: 100%;
+  min-width: 300px;
   height: 250px;
   border: 8px solid var(--color-white);
   border-top-color: var(--color-white);
@@ -331,7 +340,7 @@ input, select {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: var(--color-white);
+  background-color: var(--color-white-bsw);
   background-clip: padding-box;
   border: 1px solid var(--color-black);
   border-radius: .25rem;
@@ -399,6 +408,36 @@ label {
   height: 40px;
   margin-right: 10px;
 }
+
+/* -- webdes detail page -- */
+.webdes-details {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+ .webdes-detail-qty-form {
+  width: 40%;
+}
+
+.qty-input {
+  height: 39px;
+}
+
+.input-group>.form-control:not(:last-child) {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+
+.webdes-price {
+  padding-right: 20px;
+}
+
+.btn-webdes-detail {
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+
 
 /* testing */
 .highlight {
@@ -539,7 +578,19 @@ a, a:hover {
 
   .home-welcome-block p {
     font-size: 2.5rem;
-  }ct
+  }
+
+  .webdes-detail-image {
+    min-height: 400px;
+  }
+
+  .webdes-detail-qty-form {
+    width: 35%;
+  } 
+
+  .webdes-details {
+    padding-top: 1rem;
+}
 
   .btn-payment {
     width: 40%;
@@ -552,6 +603,10 @@ a, a:hover {
   /* footer */
   .footer-links-services {
     padding-left: 200px;
+  }
+
+  .socialbtns {
+    font-size: 1.5rem;
   }
   
 }
