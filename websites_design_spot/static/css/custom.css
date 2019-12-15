@@ -33,8 +33,24 @@ body::before {
   z-index: 100;
 }
 
-h1, h2 {
+h1, h2, h4 {
   font-weight: 900;
+}
+
+h3 {
+  font-size: 4rem;
+  line-height: 0.7;
+	letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--color-white);
+  text-shadow: 
+              8px 8px var(--color-red),
+              20px 20px var(--color-blue);
+}
+
+.card {
+  min-height: 500px;
 }
 
 /* --- Navigation --- */
@@ -286,9 +302,9 @@ form a:hover {
   padding-right: 15px;
 }
 
-.login-container, .profile-container {
+/* .login-container, .profile-container {
   text-align: center;
-}
+} */
 
 /* .registration-container, .login-container, .profile-container {
   padding: 15px 15px 100px 15px;
@@ -296,18 +312,24 @@ form a:hover {
 
 
 #id_username_or_email, #id_password {
-  width: 25%;
+  width: 50%;
   height: calc(1.5em + .75rem + 2px);
   padding: .375rem .75rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.5;
   background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
   background-clip: padding-box;
-  border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  margin: 0 15px;
+  font-size: 1.5rem;
+}
+
+label {
+  margin-bottom: 0;
+  font-weight: 700;
 }
 
 .registration-terms {
@@ -344,7 +366,7 @@ input[type=checkbox] {
   color: var(--color-red);
 }
 
-.btn-registration {
+.btn-registration, .btn-login {
   background-color: var(--color-white);
   border: 1px solid var(--color-blue);
   color: var(--color-blue);
@@ -352,7 +374,7 @@ input[type=checkbox] {
 
 }
 
-.btn-registration:hover {
+.btn-registration:hover, .btn-login:hover {
   background-color: var(--color-red);
   border: 1px solid var(--color-white);
   color: var(--color-white);
