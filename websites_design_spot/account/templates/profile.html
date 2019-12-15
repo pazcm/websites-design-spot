@@ -1,15 +1,26 @@
-{% extends "base.html" %}
+{% extends "base-without-navbar.html" %}
+{% block page_title %}WDS Register{% endblock %}
+{% load bootstrap4 %}
 {% block content %}
-<div class="profile-container">
+<div class="registration-container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <header class="card-header">
-                    <h4 class="card-title mt-2 text-center">Success!</h4>
+        <div class="col-lg-6 d-none d-lg-block form-account-side-content">
+             <h3 class="text-center p-5">Websites Design</h3>
+            <div class="side-image"><a class="navbar-brand logo" href="/"><img src="/media/images/new_moon.png" width="250" height="250"
+                    alt="logo-websites-design-spot"></a></div>
+        </div>
+        <div class="col-md-8 col-lg-6 pl-lg-0">
+            <div class="card">
+                <header class="card-header d-md-block d-lg-none">
+                    <a class="navbar-brand logo" href="/">
+                        <span>WD</span><img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot">
+                    </a>
                 </header>
                 <article class="card-body">
-                    <p>You are logged in as {{ user.email }}</p>
-                    <div class="profile-details-container">Enjoy the ride!</div>
+                    <h2 class="card-title mt-2 text-center">Success!</h2>
+                    <hr>
+                    <p class="text-center pt-5">You are logged in as <strong>{{ user.email }}</strong></p>
+                    <div class="profile-details-container text-center">Enjoy the ride!</div>
                 </article>
             </div>
         </div>
