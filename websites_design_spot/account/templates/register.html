@@ -1,22 +1,29 @@
-<!-- TBD: Add validation of registration -->
-
-{% extends "base.html" %} 
+{% extends "base-without-navbar.html" %}
+{% block page_title %}WDS Register{% endblock %}
 {% load bootstrap4 %}
 {% block content %}
 <div class="registration-container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card mt-5">
-        <header class="card-header">
-          <h4 class="card-title mt-2 text-center">Sign up</h4>
+    <div class="col-lg-6 d-none d-lg-block form-account-side-content">
+      <div class="side-image"><img src="/media/images/new_moon.png" width="300" height="300" alt="logo-websites-design-spot"></div>
+      <h1 class="text-center p-5">Explore, imagin and contact with us to express your ideas</h1>
+    </div>
+    <div class="col-md-8 col-lg-6 pl-lg-0">
+      <div class="card">
+        <header class="card-header d-md-block d-lg-none">
+          <a class="navbar-brand logo" href="/">
+            <span>WD</span><img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot">
+          </a>  
         </header>
           <article class="card-body">
+             <h2 class="card-title mt-2 text-center">Sign up to Websites Design Spot</h2>
+             <hr>
           <form  method="post" action="{% url 'register' %}" class="registration-form form-horizontal">
             <fieldset class="form-group text-center">
+              <p>Create Account</p>
               <div id="legend">
-                  <legend>Create Account</legend>
+                <legend>Already have an account? <a href="{% url 'login' %}">Log In</a></legend>
               </div>
-              <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
               {% csrf_token %}
             </fieldset>
           <div class="details-container">
@@ -56,13 +63,13 @@
               </div>
             </div>
             <!-- Terms & Conditions -->
-            <div class="form-group text-center mt-5">
-                <label><input type="checkbox" name="condition" id="condition"> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
+            <div class="form-group text-center mt-5 registration-terms">
+                <input type="checkbox" name="condition" id="condition"> <span>I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</span>
             </div>
             <!-- Button -->
             <div class="form-group text-center">
               <div class="input">
-                <button class="btn btn-success">Create Account</button>
+                <button class="btn btn-registration">Create Account</button>
               </div>
             </div>
           </div>
