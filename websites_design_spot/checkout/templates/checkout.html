@@ -1,4 +1,5 @@
-{% extends "base.html" %}
+{% extends "base-without-navbar.html" %}
+{% block page_title %}WDS Checkout{% endblock %}
 {% load static from staticfiles %}
 {% load bootstrap4 %}
 
@@ -11,66 +12,78 @@
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
+
 {% block content %}
-<div class="checkout-container rounded shadow-sm mb-1">
+<div class="checkout-container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card mt-5">
-                <header class="card-header">
-                    <h2 class="card-title mt-2 text-center">Checkout</h2>
-                </header>
+        <div class="col-lg-6 d-none d-lg-block form-account-side-content">
+        <h3 class="text-center p-5">Websites Design</h3>
+        <div class="side-image"><a class="navbar-brand logo" href="/"><img src="/media/images/new_moon.png" width="300" height="300" alt="logo-websites-design-spot"></a></div>
+            <h4 class="text-center">checkout</h4>
+        </div>
+        <div class="col-md-8 col-lg-6 pl-lg-0">
+        <div class="card">
+            <header class="card-header d-md-block d-lg-none">
+            <a class="navbar-brand logo" href="/">
+                <span>WD</span><img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot">
+            </a>  
+            </header>
+            <article class="card-body">
+                <h2 class="card-title mt-2 text-center">Checkout your choices</h2>
+                <hr>
                 <div class="card-body card-checkout">
                     {% for item in cart_items %}
-                         <div class="display panel panel-default panel-checkout">
+                        <div class="display panel panel-default panel-checkout">
                             <div class="panel-body">
                                 <div class="checkout-items-details">
                                     <div class="webdes-image-checkout frame" style="background-image: url('{{ MEDIA_URL }}{{ item.webdes.image }}')"></div>
-                                        <h3>{{ item.webdes.name }}</h3>
-                                        <div class="checkout-details">
-                                            <p>Quantity:&nbsp;{{ item.quantity }}&nbsp;</p>
-                                            <p>Price:&nbsp;{{ item.webdes.price }}€</p>
-                                        </div>
-                                </div>
-                            </div> 
+                                        <h4>{{ item.webdes.name }}</h4>
+                                            <div class="checkout-details">
+                                                <p>Quantity:&nbsp;{{ item.quantity }}&nbsp;</p>
+                                                <p>Price:&nbsp;{{ item.webdes.price }}€</p>
+                                            </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <footer class="card-footer">
+                        <div class="card-total mt-2 text-center">Total:&nbsp; <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</div>
+                    </footer>
+
+        <!-- Payment -->
+        <div class="checkout-form-container">
+            <div class="row justify-content-center">
+                <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}" class="checkout-form form-horizontal">
+                    <fieldset class="form-group text-center">
+                        <div id="legend">
+                            <legend>Payment Details</legend>
                         </div>
-                    {% endfor %}
-                </div>
-                <footer class="card-footer">
-                    <div class="card-total mt-2 text-center">Total:&nbsp; <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</div>
-                </footer>
+                    </fieldset>
+                    <div id="credit-card-errors" style="display: none;">
+                        <div id="alert-message block-message error" id="stripe-error-message"></div>
+                    </div>
+
+                    <!-- checkout details -->
+                    <div class="row justify-content-center">
+                        <div class="form-group order-form col-md-8 col-lg-12">
+                            {{ order_form }}
+                        </div>
+                        <div class="form-group payment-form col-md-8 col-lg-12">
+                            {{ payment_form }}
+                        </div>
+                            {% csrf_token %}
+                        <div class="form-group col-md-12 text-center">
+                            <div class="input btn-payment">
+                                <input class=" btn btn-secondary btn-submit-payment" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                            </div>
+                        </div>
+                    </div>
+                </form> 
+            </article>
             </div>
         </div>
     </div>
-    <!-- Payment -->
-    <div class="checkout-form-container">
-        <div class="row justify-content-center">
-            <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}" class="checkout-form form-horizontal">
-                <fieldset class="form-group text-center">
-                    <div id="legend">
-                        <legend>Payment Details</legend>
-                    </div>
-                </fieldset>
-                <div id="credit-card-errors" style="display: none;">
-                    <div id="alert-message block-message error" id="stripe-error-message"></div>
-                </div>
-
-                <!-- checkout details -->
-                <div class="row justify-content-center">
-                    <div class="form-group order-form col-md-8 col-lg-12">
-                        {{ order_form }}
-                    </div>
-                    <div class="form-group payment-form col-md-8 col-lg-12">
-                        {{ payment_form }}
-                    </div>
-                        {% csrf_token %}
-                    <div class="form-group col-md-12 text-center">
-                        <div class="input btn-payment">
-                            <input class=" btn btn-secondary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-                        </div>
-                    </div>
-                </div>
-            </form> 
-        </div>
-    </div>
 </div>
+<!-- end content -->
 {% endblock %}

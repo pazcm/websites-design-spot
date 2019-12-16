@@ -1,57 +1,66 @@
 {% extends 'base.html' %}
-{% load static from staticfiles %}
-{% load bootstrap4 %}
-
+{% block page_title %}Contact - Webdes Design Spot{% endblock %}
 {% block content %}
-<div class="cart-container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card mt-5">
-                <header class="card-header text-center">
-                    <h2 class="card-title mt-2">Some text here, ... template that you selected ...</h2>
-                    <p>Proceed to checkout or edit...</p>
-                </header>
 
-                <div class="card-body card-checkout">
-                    {% for item in cart_items %}
-                    <div class="display panel panel-default panel-checkout">
-                        <div class="panel-body">
-                            <div class="checkout-items-details text-center">
-                                <div class="webdes-image-checkout frame"
-                                    style="background-image: url('{{ MEDIA_URL }}{{ item.webdes.image }}')"></div>
-                                <h3>{{ item.webdes.name }}</h3>
-                                <p>Price:&nbsp;{{ item.webdes.price }}€</p>
+<!-- header -->
+<div class="position-relative overflow-hidden p-5 text-center header-bg">
+    <div class="col-sm-12 col-md-12 p-5 mx-auto">
+        <h1 class="display-4 font-weight-normal header-title">Websites Design Spot</h1>
+    </div>
+</div>
+<!-- end header -->
+<div class="row justify-content-center">
+
+    <div class="col-sm-12 col-md-12">
+        <!-- <div> -->
+
+        <div class="card border-top-0">
+            <header class="card-header">
+                <h2 class="card-title mt-2 text-center">this is your cart</h2>
+                <p class="text-center">bla bla bla ...</p>
+            </header>
+            <article class="card-body card-checkout">
+                {% for item in cart_items %}
+                <div class="display panel panel-default panel-checkout">
+                    <div class="panel-body">
+                        <div class="checkout-items-details">
+                            <div class="webdes-image-checkout frame"
+                                style="background-image: url('{{ MEDIA_URL }}{{ item.webdes.image }}')"></div>
+                            <h4 class="pt-2">{{ item.webdes.name }}&nbsp;|&nbsp;<span>Price:&nbsp;{{ item.webdes.price }}€</span></h4>
+                        </div>
+                    </div>
+                    <!-- cart edit form -->
+                    <form class="form-inline form-cart justify-content-center" method="post"
+                        action="{% url 'adjust_cart' item.id %}">
+                        {% csrf_token %}
+                        <div class="input-group-addon">Qty&nbsp;</div>
+                        <div class="input-group-addon">{{item.quantity}}&nbsp;</div>
+                        <div class="form-group">
+                            <label for="inputAmount" class="sr-only">New Qty</label>
+                            <div class="input-group">
+                                <input name="quantity" type="number" min="0" max="999" class="form-control cart-qty">
+                                <button type="submit" class="btn btn-cart-edit"><span
+                                        class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</button>
                             </div>
                         </div>
-                        <!-- cart edit form -->
-                        <form class="form-inline form-cart justify-content-center" method="post" action="{% url 'adjust_cart' item.id %}">
-                            {% csrf_token %}
-                            <div class="input-group-addon">{{item.quantity}}&nbsp;</div>
-                            <div class="form-group">
-                                <label for="inputAmount" class="sr-only">New Qty</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Qty&nbsp;</div>
-                                    <button type="submit" class="btn btn-primary btn-cart-edit"><span
-                                            class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</button>
-                                    <input name="quantity" type="number" min="0" max="999"
-                                        class="form-control cart-qty">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    {% endfor %}
+                    </form>
                 </div>
-                <!-- cart footer -->
-                <div class="row cart-footer mt-5 pb-5 justify-content-center  bg-white rounded shadow-sm">
-                    <div class="card-total mb-2 text-center highlight">Total:&nbsp;<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}&#8364;</div>
-                    <div class="btn-cart">
-                        <a href="{% url 'checkout' %}" class="btn  btn-lg btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
-                        <a href="{% url 'webdes' %}" class="btn btn-secondary" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Back to Designs</a>
-                    </div>
+                {% endfor %}
+            </article>
+            <!-- cart footer -->
+            <div class="row cart-footer mt-5 pb-5 justify-content-center  bg-white rounded shadow-sm">
+                <div class="card-total p-2  text-center highlight">Total:&nbsp;<span class="glyphicon glyphicon-euro"
+                        aria-hidden="true"></span>{{ total }}&#8364;</div>
+                <div class="bottom-cart">
+                    <a href="{% url 'checkout' %}" class="btn  btn-lg btn-cart-checkout" role="button"><span
+                            class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+                    <a href="{% url 'webdes' %}" class="btn btn-lg btn-cart-back" role="button"><span
+                            class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Back to Designs</a>
                 </div>
-                <!-- end cart footer -->
             </div>
+            <!-- end cart footer -->
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

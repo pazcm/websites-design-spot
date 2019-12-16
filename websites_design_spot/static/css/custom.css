@@ -179,7 +179,7 @@ button:focus {
   border-color: var(--color-white);
 }
 
-.btn-home:hover {
+.btn-home:hove {
   color: var(--color-white);
   background-color: var(--color-black);
   border-color: var(--color-white);
@@ -371,7 +371,6 @@ input[type=checkbox] {
   border: 1px solid var(--color-blue);
   color: var(--color-blue);
   font-size: 1.5rem;
-
 }
 
 .btn-registration:hover, .btn-login:hover {
@@ -389,13 +388,14 @@ input[type=checkbox] {
   text-align: center;
 }
 
-.btnContact {
-  background-color: var(--color-green);
+.btnContact, .btn-cart-back {
+  background-color: var(--color-blue);
   border: 1px solid var(--color-black);
   color: var(--color-black);
+  font-size: 2rem;    
 }
 
-.btnContact:hover {
+.btnContact:hover, .btn-cart-back:hover, .btn-cart-checkout:hover {
   background-color: var(--color-black);
   color: var(--color-white);
 }
@@ -406,7 +406,7 @@ input[type=checkbox] {
 
 /* -- Checkout form -- */
 .checkout-container {
-  padding: 10px;
+  padding: 0;
 }
 
 .checkout-form-container {
@@ -473,6 +473,19 @@ label {
   padding: 40px;
 }
 
+.btn-submit-payment {
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.btn-submit-payment:hover {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+
 .btn-secondary {
   font-size: 2rem;
 }
@@ -489,14 +502,6 @@ label {
   padding: 0 0 30px;
 }
 
-.form-cart {
-  align-items: flex-start;
-}
-
-.btn-cart {
-  padding: 0 20px; 
-}
-
 .btn-cart-edit, .cart-qty {
   margin-top: 10px;
 } 
@@ -506,12 +511,37 @@ label {
 }
 
 .btn-cart-edit {
-  height: 40px;
-  margin-right: 10px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+  font-size: 1.5rem;
+}
+
+.btn-cart-edit:hover {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+.bottom-cart {
+  padding: 0 20px;
+}
+
+.btn-cart-checkout {
+  background-color: var(--color-red);
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  font-size: 2rem;
+}
+
+.btn-cart-checkout:hover {
+  color: var(--color-white);
 }
 
 .badge {
   background-color: var(--color-blue);
+  cursor: pointer;
 }
 
 /* -- webdes detail page -- */
@@ -546,8 +576,8 @@ label {
 
 /* testing */
 .highlight {
-    background-color: #fff2ac;
-    background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+    background-color:   #fafad2;
+    background-image: linear-gradient(to right, #ffff00 0%,   #fafad2 100%);
 }
 
 /* -- Footer -- */
