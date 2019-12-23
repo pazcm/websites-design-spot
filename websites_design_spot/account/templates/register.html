@@ -17,64 +17,69 @@
           </a>  
         </header>
           <article class="card-body">
-             <h2 class="card-title mt-2 text-center">Sign up to Websites Design Spot</h2>
-             <hr>
-          <form  method="post" action="{% url 'register' %}" class="registration-form form-horizontal">
-            <fieldset class="form-group text-center">
-              <p>Create Account</p>
-              <div id="legend">
-                <legend>Already have an account? <a href="{% url 'login' %}">Log In</a></legend>
-              </div>
-              {% csrf_token %}
-            </fieldset>
-          <div class="details-container">
-            <!-- First Name -->
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="firstName">First Name </label>
-                  <input type="text" id ="firstName" name="firstName" class="form-control" placeholder="">
-              </div>
+            <h2 class="card-title mt-2 text-center">Sign up to Websites Design Spot</h2>
+            <hr>
+
+            <form  method="post" action="{% url 'register' %}" class="accountform registration-form form-horizontal">
+              <fieldset class="form-group text-center">
+                <p>Create Account</p>
+                <div id="legend">
+                  <legend>Already have an account? <a href="{% url 'login' %}">Log In</a></legend>
+                </div>
+                {% csrf_token %}
+              </fieldset>
+              <div class="details-container">
+                <!-- User name -->
+                <div class="form-row">
+                  <div id="div_id_username" class="col form-group">
+                    <label for="id_username" class="control-label required-field ">Username</label>
+                    <div class="">
+                      <input type="text" name="username" maxlength="150" autofocus="" class=" form-control" required="" id="id_username" />
+                      <p class="help-block">
+                        Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- E-mail -->
+                <div class="form-row">
+                  <div id="div_id_email" class="col form-group">
+                    <label for="id_email" class="control-label  ">Email address</label>
+                    <div class="">
+                      <input type="email" name="email" maxlength="254" class=" form-control" id="id_email" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Password -->
+                <div class="form-row">
+                  <div id="div_id_password1" class="col form-group">
+                    <label for="id_password1" class="control-label required-field ">Password</label>
+                      <div class="">
+                        <input type="password" name="password1" class=" form-control" required="" id="id_password1" />
+                      </div>
+                  </div>
+                </div>
+                <!-- Password Confirmation-->
+                <div class="form-row">
+                  <div id="div_id_password2" class="col form-group">
+                    <label for="id_password2" class="control-label required-field">Password Confirmation</label>
+                      <div class="">
+                        <input type="password" name="password2" class=" form-control" required="" id="id_password2" />
+                      </div>
+                  </div>
+                </div>
+                <!-- Terms & Conditions -->
+                <div class="form-group text-center mt-5 registration-terms">
+                  <input type="checkbox" name="condition" required="" id="condition"> <span>I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</span>
+                </div>
+                <!-- Button -->
+                <div class="form-group text-center">
+                  <div class="input">
+                    <button type="submit" class="btn btn-registration">Create account</button>
+                  </div>
+                </div>
             </div>
-            <!-- Last Name -->
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="lastName">Last Name</label>
-                  <input type="text" id ="lastName" name="lastName" class="form-control" placeholder="">
-              </div>
-            </div>
-            <!-- E-mail -->
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="email">Email</label>
-                  <input type="text" id ="email" name="email" class="form-control" placeholder="">
-              </div>
-            </div>
-            <!-- Password -->
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="password">Password</label>
-                  <input type="text" id ="password" name="password" class="form-control" placeholder="">
-              </div>
-            </div>
-            <!-- Password Confirmation-->
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="passwordConfirm">Confirm Password</label>
-                  <input type="text" id ="passwordConfirm" name="passwordConfirm" class="form-control" placeholder="">
-              </div>
-            </div>
-            <!-- Terms & Conditions -->
-            <div class="form-group text-center mt-5 registration-terms">
-                <input type="checkbox" name="condition" id="condition"> <span>I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</span>
-            </div>
-            <!-- Button -->
-            <div class="form-group text-center">
-              <div class="input">
-                <button class="btn btn-registration">Create Account</button>
-              </div>
-            </div>
-          </div>
-        </form>
+          </form>
         </article>
       </div>
     </div>
