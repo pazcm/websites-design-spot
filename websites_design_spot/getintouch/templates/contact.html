@@ -1,0 +1,73 @@
+<!-- TBD: success page message sent -->
+{% extends 'base.html' %}
+{% block page_title %}Contact - Webdes Design Spot{% endblock %}
+{% block content %}
+
+<!-- header -->
+  <div class="position-relative overflow-hidden p-5 text-center header-bg">
+    <div class="col-sm-12 col-md-12 p-5 mx-auto">
+      <h1 class="display-4 font-weight-normal header-title">Websites Design Spot</h1>
+    </div>
+  </div>
+<!-- end header -->
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12">
+      <div class="card border-top-0">
+        <header class="card-header">
+           <p class="text text-center">WDS make it easy for you to imagine and get a website that fulfills your wishes. 
+             With designs and features for every kind of sites, 
+            WDS will work with your from the template that you choose, Developing your site as you require, 
+            and up to give Support every time you need it once the site is in production. Use the form below to get in touch. Our talented and friendly staff is ready 
+            to take your ideas, questions or comments.</p>
+        </header>
+        <article class="card-body"> 
+            <form role="form" action="" method="post" class="contact-form form-horizontal">
+            {% csrf_token %}
+            <div class="contact-details-container">
+              <div class="row">
+                <div class="col-md-4 col-lg-4">
+                  <div class="form-group">
+                    <label for="id_contact_name">First Name:</label> 
+                    <input type="text" name="contact_name" required="" id="id_contact_name">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_contact_surname">Last Name:</label> 
+                    <input type="text" name="contact_surname" id="id_contact_surname">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_from_email">Email:</label> 
+                    <input type="email" name="from_email" required="" id="id_from_email">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_contact_website">Website:</label> 
+                    <input type="text" name="contact_website" id="id_contact_website"> 
+                  </div>
+                  <div class="form-group">
+                    <label for="id_contact_company">Company:</label> 
+                    <input type="text" name="contact_company" id="id_contact_company">
+                  </div>
+                </div>
+                <div class="col-md-8 col-lg-6">
+                  <div class="form-group">
+                    <label for="id_message">Message:</label> 
+                    <textarea name="message" cols="40" rows="10" required="" id="id_message"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <button type="submit">Submit</button>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-2">
+                  <div>
+                    <h2 class="title"><u>Get in touch with us</u></h2>
+                      <p class="text-contact">Our office hours are Monday through Friday, 9am to 5pm, 
+                      and we attempt to respond any query within 1 business day.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </div>
+{% endblock %}

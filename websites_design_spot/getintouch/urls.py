@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from .views import contact, success
+from .views import contactView, successView
 
 urlpatterns = [
-    url(r'^$', contact, name='contact'),
-    url(r'^$', success, name='success'),
+    url(r'^contact/$', contactView, name='contact'),
+    url(r'^success/$', successView, name='success'),
 ]
