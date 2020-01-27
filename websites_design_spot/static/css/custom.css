@@ -179,7 +179,7 @@ button:focus {
   border-color: var(--color-white);
 }
 
-.btn-home:hove {
+.btn-home:hover {
   color: var(--color-white);
   background-color: var(--color-black);
   border-color: var(--color-white);
@@ -384,13 +384,19 @@ input[type=checkbox] {
   padding: 15px 15px 100px 15px;
 }
 
-.some-text {
+.text {
   text-align: center;
+  padding: 0 0px 40px;
+  width: 50%;
+  margin: auto;
 }
 
-.btnContact, .btn-cart-back {
+.text.text-contact {
+  padding: 0;
+}
+
+/* .btnContact, .btn-cart-back {
   background-color: var(--color-blue);
-  border: 1px solid var(--color-black);
   color: var(--color-black);
   font-size: 2rem;    
 }
@@ -398,10 +404,22 @@ input[type=checkbox] {
 .btnContact:hover, .btn-cart-back:hover, .btn-cart-checkout:hover {
   background-color: var(--color-black);
   color: var(--color-white);
-}
+} */
 
 .form-control-contact {
   font-size: 1.5rem;
+}
+
+.form-textarea-contact {
+  max-height: 480px;
+  min-height: 470px;
+}
+
+.form-submit-contact {
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  width: 50%;
+  height: calc(1.5em + .75rem + 2px);
 }
 
 /* -- Checkout form -- */
@@ -434,7 +452,7 @@ input[type=checkbox] {
   flex-grow: 0;
 }
 
-input, select {
+input, select, .form-textarea-contact {
   margin-right: 15px;
   height: calc(1.5em + .75rem + 2px);
   padding: .375rem .75rem;
@@ -473,18 +491,17 @@ label {
   padding: 40px;
 }
 
-.btn-submit-payment {
+.btn-submit-payment, .form-submit-contact {
   color: var(--color-white);
   background-color: var(--color-black);
   border-color: var(--color-black);
 }
 
-.btn-submit-payment:hover {
+.btn-submit-payment:hover, .form-submit-contact:hover {
   color: var(--color-black);
   background-color: var(--color-white);
   border-color: var(--color-black);
 }
-
 
 .btn-secondary {
   font-size: 2rem;
@@ -530,7 +547,6 @@ label {
 
 .btn-cart-checkout {
   background-color: var(--color-red);
-  border: 1px solid var(--color-black);
   color: var(--color-black);
   font-size: 2rem;
 }
@@ -754,6 +770,10 @@ a, a:hover {
     padding-left: 33px;
   }
 
+  .text-contact {
+    line-height: 1;
+  }
+
   /* footer */
   .footer-links-services {
     padding-left: 200px;
@@ -769,6 +789,7 @@ a, a:hover {
   h1 {
     font-size: 5rem;
   }
+
   .navbar {
     font-size: 2rem;
   }
@@ -780,4 +801,9 @@ a, a:hover {
   .dropdown-item {
       font-size: 2rem;
   }
+
+  .text-contact {
+    line-height: 1.5;
+  }
+    
 }
