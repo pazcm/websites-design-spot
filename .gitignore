@@ -1,8 +1,2 @@
-*.sqlite3
-vE0/
 env.py
-__pycache__/
-*.py[cod]
-*.log
-*.pyc
-*.pyo
+websites_design_spot/__pycache__

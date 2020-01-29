@@ -1,0 +1,186 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block page_title %}{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="{% static 'font-awesome/css/fontawesome.min.css' %}">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body>
+  <!-- Navigation -->
+  {% block nav %}
+  <nav class="navbar navbar-expand-lg">
+
+    <div class="logo-container m-auto">
+      <a class="navbar-brand" href="/">
+        <img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot">
+      </a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'webdes' %}">Websites <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'filter_webdes' 'P' %}">Professional</a>
+            <a class="dropdown-item" href="{% url 'filter_webdes' 'E' %}">Event</a>
+            <a class="dropdown-item" href="{% url 'filter_webdes' 'A' %}">Abstract</a>
+            <a class="dropdown-item" href="{% url 'filter_webdes' 'NP' %}">Non-Profit</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'webdes' %}">All Categories</a>
+          </div>  
+        </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}" tabindex="-1">Get In Touch</a>
+        </li>
+      </ul>
+
+      <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0 m-auto py-3">
+        <div class="search-box">
+          <input type="text" name="q" class="form-control form-control-search mr-sm-2" placeholder="Search" aria-label="Search">
+          <button class="btn btn-search" type="search">Go</button>
+        </div>
+      </form>
+
+      <div class="log-container m-auto">
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}" class="nav-link nav-item">Profile</a></li>
+          <li><a href="{% url 'logout' %}" class="nav-link nav-item">Log Out</a></li>
+          <li>
+            <a href="{% url 'view_cart' %}" class="nav-link nav-item">
+              <i class="fas fa-shopping-cart"></i>
+              {% if webdes_count > 0 %}
+              <label class="badge">{{ webdes_count }}</label>
+              {% endif %}
+            </a>
+          </li>
+          {%  else %}
+          <li><a href="{% url 'register' %}" class="nav-link nav-item">Sign Up</a></li>
+          <li><a href="{% url 'login' %}" class="nav-link nav-item">Log In</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% endblock %}
+  <!-- End Navigation -->
+
+  {% if messages %}
+  <div class="alert alert-success">
+    <div class="messages">
+      {% for message in messages %}
+      {{ message }}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% block content %} {% endblock %}
+  
+<!-- Footer -->
+<footer class="footer footer-top font-small pt-4">
+  <!-- Footer Links -->
+  <div class="footer-top-container text-center text-md-left">
+    <div class="row text-center text-md-left mt-3 pb-3">
+
+      <!-- Grid column1 -->
+      <div class="col-sm-4 col-md-4 pb-4">
+        <!-- About the company -->
+        <h4 class="logo-footer mb-2">
+          <a class="logo-company" href="/"><img src="/media/images/new_moon.png" width="30" height="30" alt="logo-websites-design-spot"></a>
+        </h4>
+        <p class="about-footer">We build and support accessible web-based solutions with creative designs and consistent code on a secure and
+          reliable infrastructure; allowing clients to tell their engaging stories.</p>
+        <!-- Social links -->
+        <div class="social-links-footer socialbtns">
+          <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="tumblr"><i class="fab fa-tumblr"></i></a>
+          <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
+          <a href="#" class="github"><i class="fab fa-github"></i></a>
+          <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <!-- End Social links -->
+      </div>
+
+      <!-- Grid column2 -->
+        <div class="col-sm-4 col-md-4 footer-links-services pb-4">
+        <h4 class="title-footer-link text-uppercase mb-2 font-weight-bold">Sevices</h4>
+        <p>
+          <a class="foot-link" href="#">Design / UX</a>
+        </p>
+        <p>
+          <a class="foot-link" href="#">Web Development</a>
+        </p>
+        <p>
+          <a class="foot-link" href="#">Cloud Hosting</a>
+        </p>
+        <p>
+          <a class="foot-link" href="#">Support</a>
+        </p>
+      </div>
+      <!-- Grid column3 -->
+        <div class="col-sm-4 col-md-4 footer-links-contact">
+        <h4 class="title-footer-link text-uppercase mb-2 font-weight-bold">Contact</h4>
+        <p class="footer-link">
+          <a class="foot-link" href="#">Lorem Ipsum St. 5, 0101 - Limerick, Eire</a>
+        </p>
+        <p class="footer-link">
+          <a class="foot-link" href="#">+ 01 555 555 55</a>
+        </p class="footer-link">
+        <p>
+          <a class="foot-link" href="#">hello@websitesdesignspot</a>
+        </p>
+        <!-- <p>
+          <button type="button" class="btn btn-footer" href="{% url 'contact' %}">Get in touch</button>
+        </p> -->
+      </div>
+  </div>
+</footer>
+<!-- Footer bottom -->
+<footer class="footer footer-bottom">
+  <div class="text-center">
+    <p class="copyright">&copy;2019:
+      <a class="company-name" href="https://www.websitesdesignspot.com/"><strong>WD</strong></a> All rights reserved.
+    </p>
+  </div>
+</footer>
+<!-- Footer -->
+
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/a7bfa3d133.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
