@@ -31,8 +31,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'websites-design-spot.herokuapp.com']
-websites-design-spot.herokuapp.com 
-
 
 # Application definition
 
