@@ -14,6 +14,7 @@
                 {% endfor %}
                 <hr>
                 <p class="webdes-description pb-xl-5">{{ webdes.description }}</p>
+                 {% if user.is_authenticated %}
                 <div class="webdes-details">
                     <p class="webdes-price mb-0">{{ webdes.price }}&nbsp;&euro; </span class="webdes-category">Category: {{ webdes.get_category_display }}</span></p>
                     <form class="webdes-detail-qty-form" method="post" action="{% url 'add_to_cart' webdes.id %}">
@@ -27,6 +28,7 @@
                         </div>
                     </form>
                 </div>
+                {% endif %}
             </div>
             <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-6 display panel panel-default pt-2">
                 <div class="webdes-detail-image webdes-image frame" style="background-image: url('{{ MEDIA_URL }}{{ webdes.image }}')"></div>
