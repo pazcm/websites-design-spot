@@ -2,18 +2,18 @@ from django.db import models
 
 # Create your models here
 
-# It will add 'category' field to the db
-
-CATEGORY_CHOICES = [
-    ('P', 'Professional'),
-    ('E', 'Event'),
-    ('A', 'Abastract'),
-    ('NP', 'Non-Profit'),
-]
-
 # It will create the database for the 'webdes'
 
 class Webdes(models.Model):
+    # It will add 'category' field to the db
+    CATEGORY_CHOICES = [
+        ('P', 'Professional'),
+        ('E', 'Event'),
+        ('A', 'Abastract'),
+        ('EC', 'Ecommerce'),
+        ('NP', 'Non-Profit'),
+    ]
+
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
