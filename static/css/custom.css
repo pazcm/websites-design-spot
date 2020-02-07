@@ -49,6 +49,14 @@ h3 {
               20px 20px var(--color-blue);
 }
 
+.back-link {
+  color: var(--blue);
+}
+
+.back-link:hover {
+  color: var(--red);
+}
+
 .card {
   min-height: 500px;
 }
@@ -492,10 +500,10 @@ label {
   font-size: 2rem;
 }
 
-h4 .checkout-text {
-    font-size: 30px;
-    width: 350px;
-  }
+h4.checkout-text {
+  font-size: 30px;
+  width: 350px;
+}
 
 /* -- Cart -- */
 .webdes-image-cart {
