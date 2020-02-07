@@ -116,7 +116,6 @@ h3 {
 }
 
 /* -- hamburguer menu -- */
-
 .navbar-toggler {
   padding: .25rem .75rem;
   font-size: 1.25rem;
@@ -291,8 +290,15 @@ form a:hover {
   color: var(--color-red);
 }
 
-/* -- account forms -- */
+legend {
+  font-size: 35px;
+}
 
+.form-register-terms {
+  font-size: 25px;
+}
+
+/* -- account forms -- */
 .log-container .navbar-nav {
   flex-direction: row;
 }
@@ -300,15 +306,6 @@ form a:hover {
 .log-container li {
   padding-right: 15px;
 }
-
-/* .login-container, .profile-container {
-  text-align: center;
-} */
-
-/* .registration-container, .login-container, .profile-container {
-  padding: 15px 15px 100px 15px;
-} */
-
 
 #id_username_or_email, #id_password {
   width: 50%;
@@ -393,17 +390,6 @@ input[type=checkbox] {
 .text.text-contact {
   padding: 0;
 }
-
-/* .btnContact, .btn-cart-back {
-  background-color: var(--color-blue);
-  color: var(--color-black);
-  font-size: 2rem;    
-}
-
-.btnContact:hover, .btn-cart-back:hover, .btn-cart-checkout:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
-} */
 
 .form-control-contact {
   font-size: 1.5rem;
@@ -506,6 +492,11 @@ label {
   font-size: 2rem;
 }
 
+h4 .checkout-text {
+    font-size: 30px;
+    width: 350px;
+  }
+
 /* -- Cart -- */
 .webdes-image-cart {
   width: 100%;
@@ -550,7 +541,13 @@ label {
   font-size: 2rem;
 }
 
-.btn-cart-checkout:hover {
+.btn-cart-back {
+  background-color: var(--color-blue);
+  color: var(--color-black);
+  font-size: 2rem;    
+}
+
+.btn-cart-checkout:hover, .btn-cart-back:hover {
   color: var(--color-white);
 }
 
@@ -644,7 +641,6 @@ footer {
   color: var(--color-green);
 }
 
-
 /* -- Social links -- */
 .social-links-footer {
   padding-top: 15px;
@@ -688,6 +684,7 @@ a, a:hover {
 
 
 /*** -- Media Queries -- ***/
+
 @media only screen and (min-width: 401px) {
 
 /* Checkout form */
@@ -780,8 +777,7 @@ a, a:hover {
 
   .socialbtns {
     font-size: 1.5rem;
-  }
-  
+  } 
 }
 
 @media only screen and (min-width: 1025px) {
@@ -803,6 +799,5 @@ a, a:hover {
 
   .text-contact {
     line-height: 1.5;
-  }
-    
+  } 
 }
