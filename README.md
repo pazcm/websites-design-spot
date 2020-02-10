@@ -108,42 +108,71 @@ Bugs/Issues ...
 
 ## Deployment
 
-First I installed Django, created [github repo](https://github.com/pazcm/websites-design-spot) and created Travis account.
+To **Setup my virtual local environment**,  I installed [Django](https://www.djangoproject.com/) v1.11.17 and created [GitHub repo](https://github.com/pazcm/websites-design-spot). The steps that I went after were the following:
 
-For **Setup my local environment**, the steps that I went after were the following:
-.
-.
-.
+1. `brew update`
+
+2. `xcode-select --install`
+
+3. `brew install python3`
+
+4. install Pip package management system -> `sudo easy_install pip`
+
+5. install virtualenv for python -> `sudo pip install virtualenv`
+
+6. create a project folder -> `mkdir websites-design-spot`
+
+7. then inside the project folder, create the virtual env -> `python3.7 -m venv vE0`
+
+8. activate it to install the required project packages -> `source vE0/bin/activate` ~ shorthand `. vE0/bin/activate` || to exit (vE0) use : `deactivate`
+
+9. use pip to install the package django ('vE0'activate):
+  - `sudo pip install django==1.11.17`
+  - `pip list`
+
+10. in root directory add requirements file -> `pip freeze > requirements.txt`
+
+11. `django-admin startproject <website_design_spot>`
+
+12. inside the repo to run the dev server -> `python3.7 manage.py runserver`
+
+13. `http://127.0.0.1:8000/`
 
 
-- I created .travis.yml file at the top level of the project (with language, version, install and a dummy secret key) for [Travis](https://travis-ci.org/) Continuous Integration so it will run tests on my code every time it is pushed to GitHub. It is connected to my GitHub account.
 
 Then:
 
-- I added requiremntes.txt and Procfile at the same level directory that manage.py.
+1. I created a [Travis](https://travis-ci.org/) account and **.travis.yml** file at the top level of the project (with language, version, install and a dummy secret key) for Continuous Integration so it will run tests on my code every time it is pushed to GitHub. It is connected to my GitHub account.
 
-Procfile => webgunicorn websites_design_spot.wsgi:application
+2. I added **Procfile** => `webgunicorn websites_design_spot.wsgi:application` at the same level that manage.py.
 
-- I run the app in the local environment to make sure everything is in order with the Procfile and the requirements file locally before try to deploy.
+3. I run the app in the local environment to make sure everything is in order with the Procfile and the Requirements file before try to deploy.
 
-- In *settings.py* file, I updated the ALLOWED_HOSTS variable from an empty list to `ALLOWED_HOSTS = ['127.0.0.1', 'websites-design-spot.herokuapp.com']`.
+4. In **settings.py** file, I updated the ALLOWED_HOSTS variable from an empty list to `ALLOWED_HOSTS = ['127.0.0.1', 'websites-design-spot.herokuapp.com']`.
 
-- I Pushed the changes from Git to GitHub.
+5. I Pushed the changes from Git to GitHub.
 
-- I login to [Heroku](https://www.heroku.com/home) platform and 'Create a new app' via the dashboard. It provided a cloud Postgres database.
+6. I login to [Heroku](https://www.heroku.com/home) platform and 'Create a new app' via the dashboard. It provided a cloud Postgres database.
 
-- In Heroku dashboard settings tab, I configured the variables for AWS, DataBase and Stripe.
+7. In Heroku dashboard settings, I configured the variables for AWS, DataBase and Stripe.
 
-- I 'Deploy Branch' and 'Open app' from Heroku dashboard => [website](https://websites-design-spot.herokuapp.com/)
+8. I **'Deploy Branch'** and **'Open app'** from Heroku dashboard => [Website](https://websites-design-spot.herokuapp.com/)
 
 
 
-## Credits
+## Credits / Resources
 TBC ...
 
 - https://towardsdatascience.com/virtual-environments-104c62d48c54
 
 - https://www.freecodecamp.org/news/manage-multiple-python-versions-and-virtual-environments-venv-pyenv-pyvenv-a29fb00c296f/
+
+- https://medium.com/agatha-codes/9-straightforward-steps-for-deploying-your-django-app-with-heroku-82b952652fb4
+
+
+
+
+
 
 
 
