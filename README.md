@@ -8,83 +8,80 @@ I setup an authentication system and a contact page, so users and company's staf
 ## UX
  
 The design thinking approach of this site started writing the user stories to learn about the needs of the future users, as well as the requirements and needs of
-the owner of the site, in this case a web development company. Next to this, I created the wireframes, that depict the layouts for the main pages, responsive views, to have an idea about how to allocate the content, the functionalities that will be available and the possible behaviours.
+the owner of the site, in this case a web development company. Next to this, I created the wireframes, that depict the layouts for the main pages and their responsive views, to have an idea about how to allocate the content and the possible behaviours of the functionalities that will be available.
 
-The site allows users to explore different designs and communicate their goals with the company via contact page, to order a specific web design and pay for the development of it. The compamny is able to logging as admin in the backend of the site and manage the orders and users through an administrator panel and create, update and delete the web designs details that will be showcased along the site.
+The site allows users to explore different designs and communicate their goals with the company via contact page, to order a specific web design and pay for the development of it. The compamny is able to logging as admin in the backend of the site and manage the orders and users through an administrator panel and create, update and delete the web designs and details that will be showcased along the site.
 
-[user_stories]
-[wireframes]
+- **User stories** and **wireframes** created and followed for the project can be found [here](https://github.com/pazcm/websites-design-spot/tree/master/static/mockups).
 
 ## Features
 ### Existing Features
-- Home
-Welcome block and Gallery of images showcasing the work of the company
+- Home/
+  - Welcome block and Gallery of images showcasing the work of the company
 
-Main Navigation
-allows users ... Simple and intuitive Navigation bar widesite which makes easy to find the content available and navigate with fluency.
+- Main Navigation/
+  - Allows users to navigate in a simple and intuitive way widesite which makes easy to find the content available and move along the site with fluency.
 
-Search box
-Allows users to find quickly designs by using a keyword.
+- Search box/
+  - Allows users to find quickly designs by looking for a keyword.
 
-Categories
-Users can filter designs by category to get specific designs for their needs.
+- Categories/
+  - Users can filter designs by category to get specific designs for their needs.
 
-Contact
-Provide information to the users and a form to contact with the company.
+- Contact/
+  - Provide information to the users and a form to contact with the company.
 
-Footer
-About the company, Services links, Social links
+- Footer/
+  - Give information About the company, Services links, Social links.
 
-Authentication: Registration (Sign up) Log in / Log out
-Users can register in the site, once their are authenticated they are able to order and pay for a design.
+- Authentication: Registration (Sign up) and Log in / Log out /
+  - Users can register in the site, once their are authenticated they are able to order and pay for a design.
 
-Cart
-Authenticated users have access to a cart page where they can edit their selections and checkout.
+- Cart/
+  - Authenticated users have access to a cart page where they can edit their selections and checkout.
 
-Payment
-Allows Authenticted users to have information about their order and make a payment
+- Payment
+  - Allows Authenticted users to have information about their orders and make a payment.
 
 ### Features Left to Implement
--  ...
+-  TBC ...
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
-- [Git/GitHub]
+- [Git/GitHub](https://github.com)
     - The project uses Git version control to manage and track the changes in the code.
 
-- [Balsamiq_Cloud]
+- [Balsamiq_Cloud](https://balsamiq.com/wireframes/cloud/)
     - The wireframes for the project were created using Balsamiq GUI wireframe builder cloud application.
 
-- [Visual_Studio_IDE]
+- [Visual_Studio_IDE](https://visualstudio.microsoft.com/)
     - The project uses an Visual Studio IDE for development.
 
-- [Python]
+- [Python](https://www.python.org/)
     - The project uses Python BE framework to create the app alongs with the Python templates' engine [Jinja2](http://jinja.pocoo.org/) for the structure.
 
-- [Bootstrap]
+- [Bootstrap](https://getbootstrap.com/)
     - The project uses Bootstrap as a responsive FE framework taking advantage of some default stylings and components.
 
-- [CSS3]
+- [CSS3](https://www.w3.org/Style/CSS/)
     - The project uses CSS3 to create custom style.
 
-- [JQuery]
+- [JQuery](https://jquery.com)
     - The project uses JQuery to initialize some site elements and components.
 
-- [Font_Awesome]
+- [Font_Awesome](https://fontawesome.com/)
     - The project uses Fontawesome javascript to get the Social Icons widesite.
 
-- [Travis]
+- [Travis](https://travis-ci.org/)
     - The project uses Travis service for Continuous Integration testing.
 
-- [AWS]
+- [AWS](https://signin.aws.amazon.com/)
     - The project uses AWS cloud server for serve the static files.
 
-- [Stripe]
+- [Stripe](https://stripe.com/ie)
     - The project uses Stripe platform to accept payments from the website.
 
-- [Heroku]
+- [Heroku](https://www.heroku.com/home)
     - The project uses the hosting platform Heroku to deploy and run the app.
 
 
@@ -100,12 +97,11 @@ Travis .- I used this service by automatically building and testing small code c
 [incluir Test case:]
 
 Automate test (explain approach + link to the test and how to run)
-https://docs.djangoproject.com/en/3.0/topics/testing/overview/#running-tests
-https://www.youtube.com/watch?v=IaiMDO88mpg&list=PL4652EHGfSYgTJxZoP8cffouScRLFB8A3&index=5&t=0s
 
 
-HTML was validated using the Markup Validation Service provided by The World Wide Web Consortium: https://validator.w3.org/
-CSS was validated using the CSS Validation Service provided by The World Wide Web Consortium: https://jigsaw.w3.org/css-validator/
+- - HTML was validated using the Markup Validation Service provided by The World Wide Web Consortium: https://validator.w3.org/
+
+- - CSS was validated using the CSS Validation Service provided by The World Wide Web Consortium: https://jigsaw.w3.org/css-validator/
 
 Bugs/Issues ...
 
@@ -114,31 +110,43 @@ Bugs/Issues ...
 
 First I installed Django, created [github repo](https://github.com/pazcm/websites-design-spot) and created Travis account.
 
-For **setup my local environment**, the steps that I went after were the following:
+For **Setup my local environment**, the steps that I went after were the following:
+.
+.
+.
 
-<blockquote class="trello-card"><a href="https://trello.com/c/iicb3wrA/213-setup-local-environment">setup local environment</a></blockquote><script src="https://p.trellocdn.com/embed.min.js"></script>
 
-- I created .travis.yml file at the top level of the project (with language, version, install and a dummy secret key) for [Travis](https://travis-ci.org/) Continuous Integration.
+- I created .travis.yml file at the top level of the project (with language, version, install and a dummy secret key) for [Travis](https://travis-ci.org/) Continuous Integration so it will run tests on my code every time it is pushed to GitHub. It is connected to my GitHub account.
 
 Then:
-I added requiremntes.txt and Procfile at the same level directory that manage.py.
+
+- I added requiremntes.txt and Procfile at the same level directory that manage.py.
+
 Procfile => webgunicorn websites_design_spot.wsgi:application
 
 - I run the app in the local environment to make sure everything is in order with the Procfile and the requirements file locally before try to deploy.
 
-In *settings.py* file, I updated the ALLOWED_HOSTS variable from an empty list to `ALLOWED_HOSTS = ['127.0.0.1', 'websites-design-spot.herokuapp.com']`.
+- In *settings.py* file, I updated the ALLOWED_HOSTS variable from an empty list to `ALLOWED_HOSTS = ['127.0.0.1', 'websites-design-spot.herokuapp.com']`.
 
-I Pushed the changes from Git to GitHub.
+- I Pushed the changes from Git to GitHub.
 
 - I login to [Heroku](https://www.heroku.com/home) platform and 'Create a new app' via the dashboard. It provided a cloud Postgres database.
 
-In Heroku dashboard settings tab, I configured the variables for AWS, DataBase and Stripe.
+- In Heroku dashboard settings tab, I configured the variables for AWS, DataBase and Stripe.
 
-I 'Deploy Branch' and 'Open app' from Heroku dashboard => [website](https://websites-design-spot.herokuapp.com/)
+- I 'Deploy Branch' and 'Open app' from Heroku dashboard => [website](https://websites-design-spot.herokuapp.com/)
 
 
 
 ## Credits
+TBC ...
+
+- https://towardsdatascience.com/virtual-environments-104c62d48c54
+
+- https://www.freecodecamp.org/news/manage-multiple-python-versions-and-virtual-environments-venv-pyenv-pyvenv-a29fb00c296f/
+
+
+
 
 
 ### Media
