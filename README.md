@@ -17,7 +17,7 @@ The site allows users to explore different designs and communicate their goals w
 ## Features
 ### Existing Features
 - Home/
-  - Welcome block and Gallery of images showcasing the work of the company
+  - Welcome block and Gallery of images showcasing the work of the company.
 
 - Main Navigation/
   - Allows users to navigate in a simple and intuitive way widesite which makes easy to find the content available and move along the site with fluency.
@@ -29,10 +29,10 @@ The site allows users to explore different designs and communicate their goals w
   - Users can filter designs by category to get specific designs for their needs.
 
 - Contact/
-  - Provide information to the users and a form to contact with the company.
+  - Provides information to the users and a form to contact with the company.
 
 - Footer/
-  - Give information About the company, Services links, Social links.
+  - Gives information About the company, Services links, Social links.
 
 - Authentication: Registration (Sign up) and Log in / Log out /
   - Users can register in the site, once their are authenticated they are able to order and pay for a design.
@@ -89,10 +89,8 @@ The site allows users to explore different designs and communicate their goals w
 
 During the development I drove constantly manual testing for checking work functionalities and behaviours as well as I continuosly used several devices emulators with different screen sizes for Responsive testing; such as Nexus 5X, Nexus 10, Galaxy S5, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X, iPad and iPad Pro,...
 In addition, I crossbrowser testing the site in Firefox and Safari browsers using developer tools.
-[incluir tabla]
 
-
-Travis .- I used this service by automatically building and testing small code changes
+Travis .- I used this service which automatically builds and tests small code changes.
 
 [incluir Test case:]
 
@@ -103,12 +101,33 @@ Automate test (explain approach + link to the test and how to run)
 
 - - CSS was validated using the CSS Validation Service provided by The World Wide Web Consortium: https://jigsaw.w3.org/css-validator/
 
+*Note:* The W3C CSS Validation Service doesn't recognize root variables yet, and therefore parses several errors due to
+the global CSS variables I have set.
+
+ `  5	:root	Parse Error --color-white: #fff;
+    6	:root	Parse Error --color-black: #000;
+    7	:root	Parse Error --color-white-bsw: #f1f1f1;
+    8	:root	Parse Error --color-light-grey: #ebebeb;
+    9	:root	Parse Error --color-light-medium-gray: #999;
+    10	:root	Parse Error --color-dark-medium-gray: #444;
+    11	:root	Parse Error --color-yellow: #f9de63;
+    12	:root	Parse Error --color-green: #53c68c;
+    13	:root	Parse Error --color-red: #ea4c88;
+    14	:root	Parse Error --color-blue: #3887b6;
+    15	:root	Parse Error }
+    21	body	Value Error : background-color Parse Error var(--color-light-grey)
+    46	h3	Parse Error var(--color-white)
+    49	h3	Value Error : text-shadow Parse Error var(--color-red), 20px 20px var(--color-blue)
+    53	.back-link	Value Error : color Parse Error var(--blue)
+
+...`
+
 Bugs/Issues ...
 
 
 ## Deployment
 
-To **Setup my virtual local environment**,  I installed [Django](https://www.djangoproject.com/) v1.11.17 and created [GitHub repo](https://github.com/pazcm/websites-design-spot). The steps that I went after were the following:
+To **Setup my virtual local environment** in a Mac, I installed [Django](https://www.djangoproject.com/) v1.11.17 and created a [GitHub repo](https://github.com/pazcm/websites-design-spot). The steps that I went after were the following:
 
 1. `brew update`
 
@@ -144,7 +163,7 @@ Then:
 
 1. I created a [Travis](https://travis-ci.org/) account and **.travis.yml** file at the top level of the project (with language, version, install and a dummy secret key) for Continuous Integration so it will run tests on my code every time it is pushed to GitHub. It is connected to my GitHub account.
 
-2. I added **Procfile** => `webgunicorn websites_design_spot.wsgi:application` at the same level that manage.py.
+2. I added **Procfile** for Heroku to call the app => `webgunicorn websites_design_spot.wsgi:application` at the same level that manage.py.
 
 3. I run the app in the local environment to make sure everything is in order with the Procfile and the Requirements file before try to deploy.
 
@@ -152,7 +171,7 @@ Then:
 
 5. I Pushed the changes from Git to GitHub.
 
-6. I login to [Heroku](https://www.heroku.com/home) platform and 'Create a new app' via the dashboard. It provided a cloud Postgres database.
+6. I login to [Heroku](https://www.heroku.com/home) platform and **'Create a new app'** via the dashboard. It provided a cloud Postgres database.
 
 7. In Heroku dashboard settings, I configured the variables for AWS, DataBase and Stripe.
 
@@ -160,21 +179,31 @@ Then:
 
 
 
-## Credits / Resources
-TBC ...
-
+## Credits 
+### Resources
 - https://towardsdatascience.com/virtual-environments-104c62d48c54
 
 - https://www.freecodecamp.org/news/manage-multiple-python-versions-and-virtual-environments-venv-pyenv-pyvenv-a29fb00c296f/
 
 - https://medium.com/agatha-codes/9-straightforward-steps-for-deploying-your-django-app-with-heroku-82b952652fb4
 
+- https://www.tangowithdjango.com/book17/chapters/models_templates.html
 
+- https://realpython.com/get-started-with-django-1/
 
+- https://wsvincent.com/django-contact-form/
 
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
+- https://docs.djangoproject.com/en/2.1/ref/forms/api/
 
+- https://bootsnipp.com/snippets/7nmOW
 
+- https://cewing.github.io/training.codefellows/lectures/day09/jenkins.html
+
+- https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
+
+- https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-STATIC_ROOT
 
 
 

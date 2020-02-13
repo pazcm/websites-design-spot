@@ -151,8 +151,6 @@ button:focus {
 .nav-item:hover {
   background-color: black;
   border-radius: .25rem;
-  border: 1px solid black;
-  /* margin-top: 15px; */
 }
 
 
@@ -262,7 +260,6 @@ button:focus {
   width: 100%;
   min-width: 300px;
   border: 8px solid var(--color-white);
-  border-top-color: var(--color-white);
   border-radius: 0px;
   background-color: var(--color-white-bsw);
   padding: 18px;
