@@ -44,9 +44,22 @@ The site allows users to explore different designs and communicate their goals w
   - Allows Authenticted users to have information about their orders and make a payment.
 
 ### Features Left to Implement
--  TBC ...
 
-## Technologies Used
+In the future I would like to implement a Services Section, explaining the work for each service and giving the customers the possibility to 
+customize their templates and hosting requirements from there.
+
+-  SEVICES
+
+    - Design / UX
+
+    - Web Development
+
+    - Cloud Hosting
+
+    - Support
+
+
+## Tools and Technologies Used
 
 - [Git/GitHub](https://github.com)
     - The project uses Git version control to manage and track the changes in the code.
@@ -58,7 +71,7 @@ The site allows users to explore different designs and communicate their goals w
     - The project uses an Visual Studio IDE for development.
 
 - [Django](https://www.djangoproject.com/)
-    - The project uses Django, a high-level Python BE framework to create the app alongs with the Python templates' engine [Jinja2](http://jinja.pocoo.org/) for the structure.
+    - The project uses Django, a high-level [Python](https://www.python.org/) BE framework to create the app alongs with the Python templates' engine [Jinja2](http://jinja.pocoo.org/) for the structure.
 
 - [Bootstrap](https://getbootstrap.com/)
     - The project uses Bootstrap as a responsive FE framework taking advantage of some default stylings and components.
@@ -71,6 +84,9 @@ The site allows users to explore different designs and communicate their goals w
 
 - [Font_Awesome](https://fontawesome.com/)
     - The project uses Fontawesome javascript to get the Social Icons widesite.
+
+- [SQLite](https://www.sqlite.org)
+    - The project uses SQLite database engine which is automatically created by Django.
 
 - [Travis](https://travis-ci.org/)
     - The project uses Travis service for Continuous Integration testing.
@@ -88,11 +104,9 @@ The site allows users to explore different designs and communicate their goals w
 ## Testing
 
 During the development I drove constantly manual testing for checking work functionalities and behaviours as well as I continuosly used several devices emulators with different screen sizes for Responsive testing; such as Nexus 5X, Nexus 10, Galaxy S5, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X, iPad and iPad Pro,...
-In addition, I crossbrowser testing the site in Firefox and Safari browsers using developer tools.
+In addition, I crossbrowser testing the site in Chrome, Firefox and Safari browsers using their respective developer tools.
 
 Travis .- I used this service which automatically builds and tests small code changes.
-
-[incluir Test case:]...
 
 - - HTML was validated using the Markup Validation Service provided by The World Wide Web Consortium: https://validator.w3.org/
 
@@ -102,8 +116,11 @@ Travis .- I used this service which automatically builds and tests small code ch
 the global CSS variables I have set:
 
 `5	:root	Parse Error --color-white: #fff;`
+
 `6	:root	Parse Error --color-black: #000;`
+
 `7	:root	Parse Error --color-white-bsw: #f1f1f1;`
+
 `8	:root	Parse Error --color-light-grey: #ebebeb;`
 
 `...`
