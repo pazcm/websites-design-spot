@@ -14,7 +14,7 @@ The site allows users to explore different designs and communicate their goals w
 
 - **User stories** and **wireframes** created and followed for the project can be found [here](https://github.com/pazcm/websites-design-spot/tree/master/static/mockups).
 
-- On other hand, I used [Trello](https://trello.com/en) to plan the project spliting the work in tasks and tracking the work done as well as taking notes during the development. See a pic of my trello board [here](ttps://github.com/pazcm/websites-design-spot/tree/master/static/planning).
+- On other hand, I used [Trello](https://trello.com/en) to plan the project spliting the work in tasks and tracking the work done as well as taking notes during the development. See a pic of my trello board [here](https://github.com/pazcm/websites-design-spot/tree/master/static/planning).
 
 ## Features
 
