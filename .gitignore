@@ -1,3 +1,5 @@
 env.py
 websites_design_spot/__pycache__
 /__pycache__/
+/__pycache__
+*.pyc

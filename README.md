@@ -2,7 +2,7 @@
 
 # Websites Design Spot
 
-In this Django project, I built a full-stack website based around web development services business, where the work of the company is displayed to potential customers and public in general.
+In this [Django](https://www.djangoproject.com/) project, I built a full-stack website based around web development services business, where the work of the company is displayed to potential customers and public in general.
 I setup an authentication system and a contact page, so users and company's staff are able to interact with each other to suit their goals.
  
 ## UX
@@ -40,7 +40,7 @@ The site allows users to explore different designs and communicate their goals w
 - Cart/
   - Authenticated users have access to a cart page where they can edit their selections and checkout.
 
-- Payment
+- Payment/
   - Allows Authenticted users to have information about their orders and make a payment.
 
 ### Features Left to Implement
@@ -57,8 +57,8 @@ The site allows users to explore different designs and communicate their goals w
 - [Visual_Studio_IDE](https://visualstudio.microsoft.com/)
     - The project uses an Visual Studio IDE for development.
 
-- [Python](https://www.python.org/)
-    - The project uses Python BE framework to create the app alongs with the Python templates' engine [Jinja2](http://jinja.pocoo.org/) for the structure.
+- [Django](https://www.djangoproject.com/)
+    - The project uses Django, a high-level Python BE framework to create the app alongs with the Python templates' engine [Jinja2](http://jinja.pocoo.org/) for the structure.
 
 - [Bootstrap](https://getbootstrap.com/)
     - The project uses Bootstrap as a responsive FE framework taking advantage of some default stylings and components.
@@ -92,37 +92,21 @@ In addition, I crossbrowser testing the site in Firefox and Safari browsers usin
 
 Travis .- I used this service which automatically builds and tests small code changes.
 
-[incluir Test case:]
-
-Automate test (explain approach + link to the test and how to run)
-
+[incluir Test case:]...
 
 - - HTML was validated using the Markup Validation Service provided by The World Wide Web Consortium: https://validator.w3.org/
 
 - - CSS was validated using the CSS Validation Service provided by The World Wide Web Consortium: https://jigsaw.w3.org/css-validator/
 
 *Note:* The W3C CSS Validation Service doesn't recognize root variables yet, and therefore parses several errors due to
-the global CSS variables I have set.
+the global CSS variables I have set:
 
- `  5	:root	Parse Error --color-white: #fff;
-    6	:root	Parse Error --color-black: #000;
-    7	:root	Parse Error --color-white-bsw: #f1f1f1;
-    8	:root	Parse Error --color-light-grey: #ebebeb;
-    9	:root	Parse Error --color-light-medium-gray: #999;
-    10	:root	Parse Error --color-dark-medium-gray: #444;
-    11	:root	Parse Error --color-yellow: #f9de63;
-    12	:root	Parse Error --color-green: #53c68c;
-    13	:root	Parse Error --color-red: #ea4c88;
-    14	:root	Parse Error --color-blue: #3887b6;
-    15	:root	Parse Error }
-    21	body	Value Error : background-color Parse Error var(--color-light-grey)
-    46	h3	Parse Error var(--color-white)
-    49	h3	Value Error : text-shadow Parse Error var(--color-red), 20px 20px var(--color-blue)
-    53	.back-link	Value Error : color Parse Error var(--blue)
+`5	:root	Parse Error --color-white: #fff;`
+`6	:root	Parse Error --color-black: #000;`
+`7	:root	Parse Error --color-white-bsw: #f1f1f1;`
+`8	:root	Parse Error --color-light-grey: #ebebeb;`
 
-...`
-
-Bugs/Issues ...
+`...`
 
 
 ## Deployment
@@ -169,7 +153,7 @@ Then:
 
 4. In **settings.py** file, I updated the ALLOWED_HOSTS variable from an empty list to `ALLOWED_HOSTS = ['127.0.0.1', 'websites-design-spot.herokuapp.com']`.
 
-5. I Pushed the changes from Git to GitHub.
+5. I Pushed the changes from [Git](https://git-scm.com/) to [Git/GitHub](https://github.com).
 
 6. I login to [Heroku](https://www.heroku.com/home) platform and **'Create a new app'** via the dashboard. It provided a cloud Postgres database.
 
