@@ -61,6 +61,10 @@ h3 {
   min-height: 500px;
 }
 
+.alert-success {
+  margin: 0 !important;
+}
+
 /* --- Navigation --- */
 .navbar {
   background-color: var(--color-yellow);
@@ -590,8 +594,6 @@ h4.checkout-text {
   border-color: var(--color-green);
 }
 
-
-/* testing */
 .highlight {
     background-color:   #fafad2;
     background-image: linear-gradient(to right, #ffff00 0%,   #fafad2 100%);
