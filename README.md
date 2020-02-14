@@ -14,8 +14,12 @@ The site allows users to explore different designs and communicate their goals w
 
 - **User stories** and **wireframes** created and followed for the project can be found [here](https://github.com/pazcm/websites-design-spot/tree/master/static/mockups).
 
+- On other hand, I used [Trello](https://trello.com/en) to plan the project spliting the work in tasks and tracking the work done as well as taking notes during the development. See a pic of my trello board [here](ttps://github.com/pazcm/websites-design-spot/tree/master/static/planning).
+
 ## Features
+
 ### Existing Features
+
 - Home/
   - Welcome block and Gallery of images showcasing the work of the company.
 
@@ -159,7 +163,6 @@ To **Setup my virtual local environment** in a Mac, I installed [Django](https:/
 13. `http://127.0.0.1:8000/`
 
 
-
 Then:
 
 1. I created a [Travis](https://travis-ci.org/) account and **.travis.yml** file at the top level of the project (with language, version, install and a dummy secret key) for Continuous Integration so it will run tests on my code every time it is pushed to GitHub. It is connected to my GitHub account.
@@ -177,7 +180,6 @@ Then:
 7. In Heroku dashboard settings, I configured the variables for AWS, DataBase and Stripe.
 
 8. I **'Deploy Branch'** and **'Open app'** from Heroku dashboard => [Website](https://websites-design-spot.herokuapp.com/)
-
 
 
 ## Credits 
@@ -205,7 +207,6 @@ Then:
 - https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
 
 - https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-STATIC_ROOT
-
 
 
 ### Media
