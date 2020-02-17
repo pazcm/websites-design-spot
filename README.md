@@ -110,7 +110,7 @@ customize their templates and hosting requirements from there.
 During the development I drove constantly manual testing for checking work functionalities and behaviours as well as I continuosly used several devices emulators with different screen sizes for Responsive testing; such as Nexus 5X, Nexus 10, Galaxy S5, iPhone 6/7/8, iPhone 6/7/8 Plus, iPhone X, iPad and iPad Pro,...
 In addition, I crossbrowser testing the site in Chrome, Firefox and Safari browsers using their respective developer tools.
 
-Travis .- I used this service which automatically builds and tests small code changes.
+[Travis](https://travis-ci.org/) .- I used this service which is connected to my GitHub account and automatically builds and tests small code changes.
 
 - - HTML was validated using the Markup Validation Service provided by The World Wide Web Consortium: https://validator.w3.org/
 
@@ -165,7 +165,7 @@ To **Setup my virtual local environment** in a Mac, I installed [Django](https:/
 
 Then:
 
-1. I created a [Travis](https://travis-ci.org/) account and **.travis.yml** file at the top level of the project (with language, version, install and a dummy secret key) for Continuous Integration so it will run tests on my code every time it is pushed to GitHub. It is connected to my GitHub account.
+1. I created a [Travis](https://travis-ci.org/) account and **.travis.yml** file at the top level of the project (with language, version, install and a dummy secret key) for Continuous Integration so it will run tests on my code every time it is pushed to GitHub.
 
 2. I added **Procfile** for Heroku to call the app => `webgunicorn websites_design_spot.wsgi:application` at the same level that manage.py.
 
