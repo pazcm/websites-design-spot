@@ -179,8 +179,7 @@ Then:
 
 7. In Heroku dashboard settings, I configured the variables for AWS, DataBase and Stripe.
 
-8. I **'Deploy Branch'** and **'Open app'** from Heroku dashboard => [Website](https://websites-design-spot.herokuapp.com/)
-
+8. I **'Deploy Branch'** and **'Open app'** from Heroku dashboard => [Website]
 
 ## Credits 
 ### Resources
